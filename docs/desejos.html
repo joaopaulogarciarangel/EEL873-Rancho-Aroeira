@@ -11,50 +11,17 @@ hr{border:0;border-top:1px solid #e3d3bf;margin:28px 0}
 @media (prefers-color-scheme:dark){body{background:#1d1714;color:#eee3d8}h1,h2{color:#f0b886}h3{color:#e7a372}a{color:#f0a36a}
 blockquote,table{background:#29211c}th{background:#3a2c23}th,td,hr{border-color:#4a3a2f}h2{border-color:#6b4e37}}</style></head>
 <body><main><p><a href="./">← Página do projeto</a></p><h1>Desejos das Partes Interessadas — Priorização MoSCoW</h1>
-<p><strong>EEL873 — Engenharia de Software (UFRJ, 2026/2) · Grupo F · Projeto: Sistema de Gestão do Rancho Aroeira</strong></p>
-<p>Levantamento feito por conversas com o dono e observação da operação no salão e na cozinha. Para cada <strong>usuário</strong> do sistema foram registrados <strong>5 desejos</strong> em relação ao software. Em seguida, todos os desejos foram classificados pelo método <strong>MoSCoW</strong>.</p>
+<p><strong>EEL873 — Engenharia de Software (UFRJ, 2026/2) · Grupo F · Projeto: Sistema de Gestão do Rancho Aroeira</strong>
+<strong>Grupo:</strong> João Paulo Garcia · Gabriel dos Santos Percu Saldanha · Henrique Gebara · Danilo Santiago Baptista</p>
+<p>As partes interessadas são as <strong>12 identificadas na tarefa T1</strong> (planilha de partes interessadas, com as classificações de poder, influência, PLU, interesse e engajamento). Para cada uma foram levantados <strong>5 desejos</strong> em relação ao software, por conversas com o dono e observação da operação no salão e na cozinha. Cada desejo foi então classificado pelo método <strong>MoSCoW</strong>, do ponto de vista do que o sistema deve entregar.</p>
 <p><strong>Legenda:</strong> <strong>M</strong> = <em>Must have</em> (obrigatório) · <strong>S</strong> = <em>Should have</em> (importante) · <strong>C</strong> = <em>Could have</em> (desejável, se houver tempo) · <strong>W</strong> = <em>Won't have this time</em> (fora desta versão).</p>
+<blockquote>
+<p>Nas partes interessadas que <strong>não usam</strong> o sistema (fisco, ANPD, fornecedores, concorrentes, usuários mal-intencionados), a classificação diz se o sistema vai <strong>atender</strong> àquele desejo. Para os <strong>usuários mal-intencionados</strong>, o desejo é algo que o sistema deve <strong>impedir</strong>: o desejo em si fica como <strong>W</strong>, e o requisito de proteção correspondente aparece na consolidação.</p>
+</blockquote>
 <hr />
-<h2>1. Usuários considerados</h2>
-<div class="tw"><table>
-<thead>
-<tr>
-<th>Usuário</th>
-<th>Quem é</th>
-<th>Como usa o sistema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Proprietário / gestor</td>
-<td>Dono do Rancho</td>
-<td>Painel de gestão, caixa, relatórios</td>
-</tr>
-<tr>
-<td>Garçons</td>
-<td>Equipe do salão</td>
-<td>App no celular para lançar pedidos e fechar contas</td>
-</tr>
-<tr>
-<td>Equipe da cozinha</td>
-<td>Cozinheiros</td>
-<td>Monitor com os pedidos a preparar</td>
-</tr>
-<tr>
-<td>Clientes do salão</td>
-<td>Quem almoça na casa</td>
-<td>Cardápio e pedido pelo celular da mesa (QR code)</td>
-</tr>
-<tr>
-<td>Público do site</td>
-<td>Clientes em potencial</td>
-<td>Site com cardápio, horário, localização e reservas</td>
-</tr>
-</tbody>
-</table></div>
-<p>As demais partes interessadas identificadas na tarefa anterior (fornecedores, órgãos fiscais, ANPD, concorrentes) <strong>não usam</strong> o sistema e por isso não entram nesta classificação.</p>
-<h2>2. Desejos por usuário</h2>
-<h3>2.1. Proprietário / gestor</h3>
+<h2>1. Desejos por parte interessada</h2>
+<h3>1.1. Proprietário (patrocinador) — João José de Assis Rangel</h3>
+<p><em>T1: poder e influência ALTO · PLU ALTO/ALTO/ALTO · interesse ALTO · LIDERA</em></p>
 <div class="tw"><table>
 <thead>
 <tr>
@@ -66,12 +33,12 @@ blockquote,table{background:#29211c}th{background:#3a2c23}th,td,hr{border-color:
 <tbody>
 <tr>
 <td>P1</td>
-<td>Ver as <strong>mesas do salão em tempo real</strong>: quais estão ocupadas, o que cada uma pediu e o que está pendente na cozinha</td>
+<td>Ver as <strong>mesas do salão em tempo real</strong>: ocupadas, o que cada uma pediu e o que está pendente na cozinha</td>
 <td><strong>M</strong></td>
 </tr>
 <tr>
 <td>P2</td>
-<td><strong>Fechar a conta no caixa</strong> com a taxa de serviço de 10% (opcional para o cliente) e a forma de pagamento (Pix, cartão, dinheiro)</td>
+<td><strong>Fechar a conta no caixa</strong> com a taxa de serviço de 10% (opcional para o cliente) e a forma de pagamento</td>
 <td><strong>M</strong></td>
 </tr>
 <tr>
@@ -81,17 +48,56 @@ blockquote,table{background:#29211c}th{background:#3a2c23}th,td,hr{border-color:
 </tr>
 <tr>
 <td>P4</td>
-<td>Ver <strong>KPIs do dia, da semana, do mês e do ano</strong>: faturamento, ticket médio, vendas por forma de pagamento e meta diária</td>
+<td>Ver <strong>KPIs do dia, da semana, do mês e do ano</strong>: faturamento, ticket médio, formas de pagamento e meta diária</td>
 <td><strong>S</strong></td>
 </tr>
 <tr>
 <td>P5</td>
-<td>Calcular a <strong>divisão da taxa de 10% entre a equipe</strong> e controlar o <strong>estoque</strong> de insumos</td>
+<td>Calcular a <strong>divisão dos 10% entre a equipe</strong>, controlar o <strong>estoque</strong> e divulgar a casa num <strong>site</strong></td>
 <td><strong>S</strong></td>
 </tr>
 </tbody>
 </table></div>
-<h3>2.2. Garçons</h3>
+<h3>1.2. Desenvolvedores / gerentes do projeto — Grupo F</h3>
+<p><em>T1: poder MÉDIO · influência ALTO · interesse ALTO · LIDERA</em></p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Desejo</th>
+<th>MoSCoW</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>D1</td>
+<td>Ter <strong>acesso à operação real</strong> (dono, garçons e cozinha) para levantar e validar os requisitos</td>
+<td><strong>M</strong></td>
+</tr>
+<tr>
+<td>D2</td>
+<td><strong>Infraestrutura com custo próximo de zero</strong> (hospedagem e banco de dados em nuvem, em planos gratuitos)</td>
+<td><strong>M</strong></td>
+</tr>
+<tr>
+<td>D3</td>
+<td>Um <strong>cardápio cadastrado num lugar só</strong>, usado igualmente pelo garçom, pela cozinha e pelo cliente</td>
+<td><strong>S</strong></td>
+</tr>
+<tr>
+<td>D4</td>
+<td><strong>Publicar versões novas sem parar a casa</strong>, fora do horário de funcionamento (sexta a domingo, 11h30–15h30)</td>
+<td><strong>S</strong></td>
+</tr>
+<tr>
+<td>D5</td>
+<td><strong>Backup automático</strong> do banco de dados</td>
+<td><strong>S</strong></td>
+</tr>
+</tbody>
+</table></div>
+<h3>1.3. Garçons</h3>
+<p><em>T1: poder BAIXO · influência MÉDIO · interesse ALTO · NEUTRO</em></p>
 <div class="tw"><table>
 <thead>
 <tr>
@@ -103,12 +109,12 @@ blockquote,table{background:#29211c}th{background:#3a2c23}th,td,hr{border-color:
 <tbody>
 <tr>
 <td>G1</td>
-<td><strong>Lançar o pedido pelo celular</strong> na mesa e mandar direto para a cozinha, sem andar com papel</td>
+<td><strong>Lançar o pedido pelo celular</strong> na mesa e mandá-lo direto para a cozinha e o bar</td>
 <td><strong>M</strong></td>
 </tr>
 <tr>
 <td>G2</td>
-<td>Marcar o <strong>ponto da carne</strong> e os <strong>acompanhamentos</strong> sem precisar escrever, escolhendo em listas</td>
+<td>Marcar o <strong>ponto da carne</strong> e os <strong>acompanhamentos</strong> escolhendo em listas, sem escrever</td>
 <td><strong>M</strong></td>
 </tr>
 <tr>
@@ -118,17 +124,18 @@ blockquote,table{background:#29211c}th{background:#3a2c23}th,td,hr{border-color:
 </tr>
 <tr>
 <td>G4</td>
-<td>Lançar um <strong>item avulso</strong> (algo fora do cardápio) com nome e preço</td>
+<td>Receber a <strong>comissão dos 10%</strong> calculada corretamente</td>
 <td><strong>S</strong></td>
 </tr>
 <tr>
 <td>G5</td>
-<td>Corrigir ou retirar um item da comanda quando o cliente muda de ideia</td>
+<td>Lançar <strong>item avulso</strong> e corrigir a comanda quando o cliente muda de ideia</td>
 <td><strong>S</strong></td>
 </tr>
 </tbody>
 </table></div>
-<h3>2.3. Equipe da cozinha</h3>
+<h3>1.4. Equipe da cozinha</h3>
+<p><em>T1: poder BAIXO · influência MÉDIO · interesse MÉDIO · APÓIA</em></p>
 <div class="tw"><table>
 <thead>
 <tr>
@@ -140,12 +147,12 @@ blockquote,table{background:#29211c}th{background:#3a2c23}th,td,hr{border-color:
 <tbody>
 <tr>
 <td>K1</td>
-<td>Ver os pedidos <strong>numa tela, em ordem de chegada</strong>, aparecendo sozinhos assim que o garçom ou o cliente envia</td>
+<td>Ver os pedidos <strong>numa tela, em ordem de chegada</strong>, aparecendo sozinhos assim que são enviados</td>
 <td><strong>M</strong></td>
 </tr>
 <tr>
 <td>K2</td>
-<td>Ler com clareza o <strong>ponto da carne</strong> e os <strong>acompanhamentos</strong> de cada prato</td>
+<td>Ler com clareza o <strong>ponto da carne</strong> e os <strong>acompanhamentos</strong></td>
 <td><strong>M</strong></td>
 </tr>
 <tr>
@@ -160,12 +167,13 @@ blockquote,table{background:#29211c}th{background:#3a2c23}th,td,hr{border-color:
 </tr>
 <tr>
 <td>K5</td>
-<td>Ver <strong>há quanto tempo cada pedido espera</strong>, com destaque para os atrasados, e marcar como pronto</td>
+<td>Ver <strong>há quanto tempo cada pedido espera</strong> e marcar o prato como pronto</td>
 <td><strong>S</strong></td>
 </tr>
 </tbody>
 </table></div>
-<h3>2.4. Clientes do salão</h3>
+<h3>1.5. Clientes do salão</h3>
+<p><em>T1: poder BAIXO · influência BAIXO · interesse MÉDIO · DESCONHECE</em></p>
 <div class="tw"><table>
 <thead>
 <tr>
@@ -182,17 +190,17 @@ blockquote,table{background:#29211c}th{background:#3a2c23}th,td,hr{border-color:
 </tr>
 <tr>
 <td>C2</td>
-<td><strong>Fazer o pedido pelo próprio celular</strong>, sem esperar o garçom no horário de pico</td>
+<td><strong>Pedir pelo próprio celular</strong>, sem esperar o garçom no horário de pico</td>
 <td><strong>S</strong></td>
 </tr>
 <tr>
 <td>C3</td>
-<td><strong>Acompanhar a comanda da mesa</strong> e o total a qualquer momento, inclusive com vários celulares na mesma mesa</td>
+<td><strong>Acompanhar a comanda da mesa</strong> e o total, mesmo com vários celulares na mesma mesa</td>
 <td><strong>S</strong></td>
 </tr>
 <tr>
 <td>C4</td>
-<td><strong>Pedir por voz</strong>, falando o pedido como falaria ao garçom, com a IA perguntando quando houver dúvida</td>
+<td><strong>Pedir por voz</strong>, falando como falaria ao garçom, com a IA perguntando quando houver dúvida</td>
 <td><strong>C</strong></td>
 </tr>
 <tr>
@@ -202,7 +210,8 @@ blockquote,table{background:#29211c}th{background:#3a2c23}th,td,hr{border-color:
 </tr>
 </tbody>
 </table></div>
-<h3>2.5. Público do site</h3>
+<h3>1.6. Público do site (clientes em potencial)</h3>
+<p><em>T1: poder BAIXO · influência BAIXO · interesse BAIXO · DESCONHECE</em></p>
 <div class="tw"><table>
 <thead>
 <tr>
@@ -219,7 +228,7 @@ blockquote,table{background:#29211c}th{background:#3a2c23}th,td,hr{border-color:
 </tr>
 <tr>
 <td>S2</td>
-<td>Saber <strong>como chegar</strong> (rota até o local na rodovia)</td>
+<td>Saber <strong>como chegar</strong> pela BR-356 (km 174)</td>
 <td><strong>S</strong></td>
 </tr>
 <tr>
@@ -234,48 +243,295 @@ blockquote,table{background:#29211c}th{background:#3a2c23}th,td,hr{border-color:
 </tr>
 <tr>
 <td>S5</td>
-<td>Conhecer a <strong>história da casa</strong> e o <strong>lazer</strong> do terreno (espaço kids, pescaria, animais, cavalo)</td>
+<td>Conhecer a <strong>história da casa</strong> e o <strong>lazer</strong> do terreno</td>
 <td><strong>C</strong></td>
 </tr>
 </tbody>
 </table></div>
-<h2>3. Classificação MoSCoW consolidada (todos os usuários)</h2>
+<h3>1.7. Fornecedores de insumos</h3>
+<p><em>T1: poder BAIXO · influência BAIXO · interesse BAIXO · DESCONHECE</em></p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Desejo</th>
+<th>MoSCoW</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>F1</td>
+<td>Receber os <strong>pedidos de reposição com antecedência</strong></td>
+<td><strong>C</strong></td>
+</tr>
+<tr>
+<td>F2</td>
+<td>Receber os pedidos nas <strong>quantidades corretas</strong>, sem faltar nem sobrar</td>
+<td><strong>C</strong></td>
+</tr>
+<tr>
+<td>F3</td>
+<td>Que o restaurante saiba <strong>o que está acabando</strong> antes de faltar (estoque com nível mínimo)</td>
+<td><strong>S</strong></td>
+</tr>
+<tr>
+<td>F4</td>
+<td><strong>Compras regulares</strong>, previsíveis a partir do histórico de consumo</td>
+<td><strong>C</strong></td>
+</tr>
+<tr>
+<td>F5</td>
+<td>Fazer pedidos e cotações por um <strong>portal integrado</strong> ao sistema</td>
+<td><strong>W</strong></td>
+</tr>
+</tbody>
+</table></div>
+<h3>1.8. Fornecedores de tecnologia (nuvem) — hospedagem e banco de dados</h3>
+<p><em>T1: poder BAIXO (organização) / MÉDIO (PLU) · influência MÉDIO · DESCONHECE</em></p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Desejo</th>
+<th>MoSCoW</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>N1</td>
+<td>Uso <strong>dentro dos limites</strong> do plano gratuito (requisições, armazenamento)</td>
+<td><strong>M</strong></td>
+</tr>
+<tr>
+<td>N2</td>
+<td>Uso <strong>dentro dos termos de serviço</strong></td>
+<td><strong>M</strong></td>
+</tr>
+<tr>
+<td>N3</td>
+<td>Acesso ao banco <strong>com autenticação</strong> e chaves secretas protegidas</td>
+<td><strong>M</strong></td>
+</tr>
+<tr>
+<td>N4</td>
+<td><strong>Monitoramento</strong> do consumo para não ser surpreendido por bloqueio</td>
+<td><strong>S</strong></td>
+</tr>
+<tr>
+<td>N5</td>
+<td>Converter o uso gratuito em <strong>assinatura paga</strong></td>
+<td><strong>W</strong></td>
+</tr>
+</tbody>
+</table></div>
+<h3>1.9. Órgãos fiscais — SEFAZ-RJ e Receita Federal</h3>
+<p><em>T1: poder ALTO · influência BAIXO · PLU ALTO/ALTO/BAIXO · DESCONHECE</em></p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Desejo</th>
+<th>MoSCoW</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>R1</td>
+<td><strong>Toda venda registrada</strong>, sem venda "por fora"</td>
+<td><strong>M</strong></td>
+</tr>
+<tr>
+<td>R2</td>
+<td>Valores <strong>coerentes</strong> entre o caixa e o histórico (taxa de serviço tratada de forma consistente)</td>
+<td><strong>M</strong></td>
+</tr>
+<tr>
+<td>R3</td>
+<td>Registro da <strong>forma de pagamento</strong> de cada venda</td>
+<td><strong>M</strong></td>
+</tr>
+<tr>
+<td>R4</td>
+<td>Histórico <strong>guardado pelo prazo legal</strong> e exportável para o contador</td>
+<td><strong>S</strong></td>
+</tr>
+<tr>
+<td>R5</td>
+<td><strong>Emissão de nota fiscal eletrônica</strong> pelo próprio sistema</td>
+<td><strong>W</strong></td>
+</tr>
+</tbody>
+</table></div>
+<h3>1.10. Órgão de proteção de dados — ANPD (LGPD)</h3>
+<p><em>T1: poder ALTO · influência BAIXO · PLU ALTO/ALTO/BAIXO · DESCONHECE</em></p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Desejo</th>
+<th>MoSCoW</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>L1</td>
+<td>Coletar <strong>só os dados necessários</strong> de clientes (nome e contato na reserva ou no orçamento)</td>
+<td><strong>M</strong></td>
+</tr>
+<tr>
+<td>L2</td>
+<td>Dados de clientes e logins da equipe <strong>protegidos</strong> (acesso só com autenticação)</td>
+<td><strong>M</strong></td>
+</tr>
+<tr>
+<td>L3</td>
+<td>Recados <strong>realmente anônimos</strong>: nenhum dado que identifique o autor</td>
+<td><strong>S</strong></td>
+</tr>
+<tr>
+<td>L4</td>
+<td><strong>Prazo de retenção</strong> definido para os dados pessoais</td>
+<td><strong>S</strong></td>
+</tr>
+<tr>
+<td>L5</td>
+<td>Se houver gravação de <strong>voz</strong> do cliente, aviso claro e descarte após o uso</td>
+<td><strong>C</strong></td>
+</tr>
+</tbody>
+</table></div>
+<h3>1.11. Usuários mal-intencionados (classe desfavorecida)</h3>
+<p><em>T1: PLU MÉDIO/BAIXO/ALTO ("perigoso") · DESCONHECE — desejos que o sistema deve IMPEDIR</em></p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Desejo (a impedir)</th>
+<th>MoSCoW</th>
+<th>Requisito de proteção</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>X1</td>
+<td>Fazer <strong>pedido falso</strong> de uma mesa onde não está</td>
+<td><strong>W</strong></td>
+<td>Só pede pelo QR quem está na mesa (QR assinado e sessão por mesa) — <strong>M</strong></td>
+</tr>
+<tr>
+<td>X2</td>
+<td><strong>Alterar o preço</strong> de um item no pedido</td>
+<td><strong>W</strong></td>
+<td>O servidor recalcula o preço pelo cardápio; o celular nunca envia preço — <strong>M</strong></td>
+</tr>
+<tr>
+<td>X3</td>
+<td><strong>Ver a comanda de outras mesas</strong></td>
+<td><strong>W</strong></td>
+<td>Cada mesa vê só a própria comanda — <strong>M</strong></td>
+</tr>
+<tr>
+<td>X4</td>
+<td><strong>Encher a cozinha</strong> de pedidos ou abusar do pedido por voz</td>
+<td><strong>W</strong></td>
+<td>Limite de pedidos e de falas por mesa — <strong>S</strong></td>
+</tr>
+<tr>
+<td>X5</td>
+<td>Mandar <strong>spam</strong> de recados</td>
+<td><strong>W</strong></td>
+<td>Limite de recados por origem — <strong>S</strong></td>
+</tr>
+</tbody>
+</table></div>
+<h3>1.12. Concorrentes locais — churrascarias e quiosques da região</h3>
+<p><em>T1: tudo BAIXO · DESCONHECE (recebem valor negativo do projeto)</em></p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Desejo</th>
+<th>MoSCoW</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>O1</td>
+<td><strong>Manter a própria clientela</strong>, sem perdê-la para o atendimento mais ágil do Rancho</td>
+<td><strong>W</strong></td>
+</tr>
+<tr>
+<td>O2</td>
+<td>Que o Rancho <strong>não apareça</strong> nas buscas e mapas da região</td>
+<td><strong>W</strong></td>
+</tr>
+<tr>
+<td>O3</td>
+<td><strong>Conhecer os preços</strong> do Rancho para se posicionar</td>
+<td><strong>W</strong> (o cardápio público é escolha do dono)</td>
+</tr>
+<tr>
+<td>O4</td>
+<td>Que o Rancho <strong>não divulgue</strong> o lazer e os eventos, que são diferenciais</td>
+<td><strong>W</strong></td>
+</tr>
+<tr>
+<td>O5</td>
+<td><strong>Copiar a ideia</strong> do sistema</td>
+<td><strong>W</strong></td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2>2. Classificação MoSCoW consolidada</h2>
 <h3>Must have — sem isto o sistema não substitui o papel</h3>
 <div class="tw"><table>
 <thead>
 <tr>
 <th>Desejo</th>
-<th>Usuários</th>
+<th>Partes interessadas</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Lançar pedido pelo celular e enviá-lo à cozinha</td>
+<td>Lançar pedido pelo celular e enviá-lo à cozinha e ao bar</td>
 <td>Garçons (G1)</td>
 </tr>
 <tr>
-<td>Ponto da carne e acompanhamentos escolhidos em listas e legíveis na cozinha</td>
+<td>Ponto da carne e acompanhamentos em listas, legíveis na cozinha</td>
 <td>Garçons (G2), Cozinha (K2)</td>
 </tr>
 <tr>
-<td>Monitor da cozinha com os pedidos em tempo real, em ordem de chegada</td>
-<td>Cozinha (K1)</td>
+<td>Monitor da cozinha em tempo real, em ordem de chegada, só com itens da cozinha</td>
+<td>Cozinha (K1, K3)</td>
 </tr>
 <tr>
-<td>Separação cozinha × bar</td>
-<td>Cozinha (K3)</td>
-</tr>
-<tr>
-<td>Situação das mesas: para o garçom (livre, ocupada, aguardando pagamento) e para o dono (pedidos e pendências)</td>
+<td>Situação das mesas para o garçom e para o dono</td>
 <td>Garçons (G3), Proprietário (P1)</td>
 </tr>
 <tr>
-<td>Fechamento da conta com taxa de serviço e forma de pagamento</td>
-<td>Proprietário (P2)</td>
+<td>Fechamento da conta com taxa de serviço e forma de pagamento; toda venda registrada</td>
+<td>Proprietário (P2), Fisco (R1, R2, R3)</td>
 </tr>
 <tr>
 <td>Histórico de vendas exportável</td>
 <td>Proprietário (P3)</td>
+</tr>
+<tr>
+<td>Proteção do pedido pelo QR: sessão por mesa, preço calculado no servidor, comanda só da própria mesa</td>
+<td>Mal-intencionados (X1, X2, X3)</td>
+</tr>
+<tr>
+<td>Autenticação da equipe e proteção dos dados pessoais</td>
+<td>ANPD (L1, L2), Fornecedores de tecnologia (N3)</td>
+</tr>
+<tr>
+<td>Custo próximo de zero, dentro dos limites e termos dos planos gratuitos</td>
+<td>Desenvolvedores (D2), Fornecedores de tecnologia (N1, N2)</td>
+</tr>
+<tr>
+<td>Acesso à operação real para validar os requisitos</td>
+<td>Desenvolvedores (D1)</td>
 </tr>
 </tbody>
 </table></div>
@@ -284,7 +540,7 @@ blockquote,table{background:#29211c}th{background:#3a2c23}th,td,hr{border-color:
 <thead>
 <tr>
 <th>Desejo</th>
-<th>Usuários</th>
+<th>Partes interessadas</th>
 </tr>
 </thead>
 <tbody>
@@ -293,12 +549,12 @@ blockquote,table{background:#29211c}th{background:#3a2c23}th,td,hr{border-color:
 <td>Proprietário (P4)</td>
 </tr>
 <tr>
-<td>Divisão da taxa de 10% e controle de estoque</td>
-<td>Proprietário (P5)</td>
+<td>Divisão dos 10% e comissão correta; estoque com nível mínimo</td>
+<td>Proprietário (P5), Garçons (G4), Fornecedores de insumos (F3)</td>
 </tr>
 <tr>
 <td>Item avulso e correção da comanda</td>
-<td>Garçons (G4, G5)</td>
+<td>Garçons (G5)</td>
 </tr>
 <tr>
 <td>Alerta sonoro e tempo de espera na cozinha</td>
@@ -306,11 +562,27 @@ blockquote,table{background:#29211c}th{background:#3a2c23}th,td,hr{border-color:
 </tr>
 <tr>
 <td>Cardápio, pedido e comanda pelo QR code da mesa</td>
-<td>Clientes (C1, C2, C3)</td>
+<td>Clientes do salão (C1, C2, C3)</td>
 </tr>
 <tr>
 <td>Site com horário, rota e cardápio</td>
-<td>Público (S1, S2, S3)</td>
+<td>Público do site (S1, S2, S3), Proprietário (P5)</td>
+</tr>
+<tr>
+<td>Cardápio único, publicação sem parar a casa, backup automático</td>
+<td>Desenvolvedores (D3, D4, D5)</td>
+</tr>
+<tr>
+<td>Histórico guardado e exportável para o contador; prazo de retenção</td>
+<td>Fisco (R4), ANPD (L4)</td>
+</tr>
+<tr>
+<td>Recados realmente anônimos; limites contra abuso e spam</td>
+<td>ANPD (L3), Mal-intencionados (X4, X5)</td>
+</tr>
+<tr>
+<td>Monitoramento do consumo da nuvem</td>
+<td>Fornecedores de tecnologia (N4)</td>
 </tr>
 </tbody>
 </table></div>
@@ -319,25 +591,29 @@ blockquote,table{background:#29211c}th{background:#3a2c23}th,td,hr{border-color:
 <thead>
 <tr>
 <th>Desejo</th>
-<th>Usuários</th>
+<th>Partes interessadas</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Pedido por voz com IA</td>
-<td>Clientes (C4)</td>
+<td>Pedido por voz com IA, com aviso e descarte do áudio</td>
+<td>Clientes do salão (C4), ANPD (L5)</td>
 </tr>
 <tr>
 <td>Recados anônimos</td>
-<td>Clientes (C5)</td>
+<td>Clientes do salão (C5)</td>
 </tr>
 <tr>
 <td>Reservas e orçamento de eventos pelo site</td>
-<td>Público (S4)</td>
+<td>Público do site (S4)</td>
 </tr>
 <tr>
 <td>Página da história e do lazer</td>
-<td>Público (S5)</td>
+<td>Público do site (S5)</td>
+</tr>
+<tr>
+<td>Pedidos de reposição planejados a partir do histórico</td>
+<td>Fornecedores de insumos (F1, F2, F4)</td>
 </tr>
 </tbody>
 </table></div>
@@ -351,27 +627,36 @@ blockquote,table{background:#29211c}th{background:#3a2c23}th,td,hr{border-color:
 </thead>
 <tbody>
 <tr>
-<td>Emissão de nota fiscal eletrônica pelo sistema</td>
-<td>Exige integração com a Secretaria de Fazenda e certificado digital; continua no processo atual</td>
+<td>Nota fiscal eletrônica pelo sistema</td>
+<td>Exige integração com a SEFAZ e certificado digital; continua no processo atual (R5)</td>
 </tr>
 <tr>
-<td>Pagamento online pelo celular do cliente</td>
-<td>O pagamento segue no caixa; evita taxas e estornos</td>
+<td>Portal para fornecedores</td>
+<td>Fora do objetivo, que é a operação do salão (F5)</td>
 </tr>
 <tr>
-<td>Delivery e retirada no local</td>
-<td>A casa trabalha com almoço no salão; não há operação de entrega</td>
+<td>Assinatura paga de nuvem</td>
+<td>O orçamento exige planos gratuitos nesta versão (N5)</td>
 </tr>
 <tr>
-<td>Aplicativo para instalar</td>
-<td>Tudo funciona no navegador do celular, sem instalação</td>
+<td>Desejos dos mal-intencionados</td>
+<td>São bloqueados pelos requisitos de proteção (X1–X5)</td>
+</tr>
+<tr>
+<td>Desejos dos concorrentes</td>
+<td>Não são atendidos; representam o valor negativo do projeto (O1–O5)</td>
+</tr>
+<tr>
+<td>Pagamento online, delivery/retirada e aplicativo instalável</td>
+<td>Mudariam o modelo de operação da casa ou contrariam a simplicidade exigida</td>
 </tr>
 </tbody>
 </table></div>
-<h2>4. Critérios usados na priorização</h2>
+<h2>3. Critérios usados na priorização</h2>
 <ul>
-<li><strong>Must</strong> é o que a <strong>proposta inicial</strong> pede e o que tira a operação do papel: o caminho <em>garçom → cozinha → caixa → histórico</em>. Se faltar qualquer elo, a casa volta às comandas escritas.</li>
-<li><strong>Should</strong> são ganhos claros que dependem do núcleo pronto: os indicadores dependem do histórico; o pedido pelo QR depende do monitor da cozinha.</li>
-<li><strong>Could</strong> são diferenciais para o cliente. O <strong>pedido por voz</strong> é o mais inovador, mas depende de um serviço de IA, tem custo por uso e precisa de testes com falas reais antes de ir para o salão — por isso vem depois do pedido pelo QR, que já resolve a mesma necessidade com toque.</li>
-<li><strong>Won't</strong> são pedidos plausíveis que mudariam o modelo de operação da casa ou exigiriam integrações caras para esta versão.</li>
+<li><strong>Must</strong> é o caminho que a proposta inicial pede e que tira a operação do papel — <em>garçom → cozinha → caixa → histórico</em> —, mais as <strong>restrições</strong> que não se negociam: segurança contra fraude no pedido, proteção de dados (LGPD), registro de toda venda (fisco) e custo zero de infraestrutura.</li>
+<li><strong>Should</strong> são ganhos que dependem do núcleo pronto (os indicadores dependem do histórico; o pedido pelo QR depende do monitor da cozinha) ou que reduzem riscos operacionais (backup, limites contra abuso).</li>
+<li><strong>Could</strong> são diferenciais. O <strong>pedido por voz</strong> é o mais inovador, mas depende de um serviço de IA, tem custo por uso, exige cuidado com dados de voz e precisa de testes com falas reais — por isso vem depois do pedido pelo QR, que resolve a mesma necessidade com toque.</li>
+<li><strong>Won't</strong> são desejos fora do objetivo desta versão, e os desejos das partes interessadas <strong>negativas</strong> (mal-intencionados e concorrentes), que o sistema não atende por definição.</li>
+<li>A <strong>planilha T1</strong> orientou o peso de cada parte interessada: o proprietário (ALTO em tudo, LIDERA) define o núcleo; os garçons (interesse ALTO, NEUTRO) têm os desejos operacionais como Must, para que passem a apoiar; fisco e ANPD (poder ALTO, influência BAIXA) não pedem funcionalidades, mas impõem restrições obrigatórias.</li>
 </ul></main></body></html>

@@ -1,6 +1,6 @@
 # Sistema de Gestão — Rancho Aroeira
 
-**EEL873 — Engenharia de Software (UFRJ, 2026/2) · Grupo F**
+**EEL873 — Engenharia de Software (UFRJ, 2026/2) · Grupo F:** João Paulo Garcia · Gabriel dos Santos Percu Saldanha · Henrique Gebara · Danilo Santiago Baptista
 
 Projeto de um sistema para apoiar a operação do **Rancho Aroeira**, um quiosque de churrascaria à beira da BR-356 (km 174, Curva de Grussaí, São João da Barra/RJ), especializado em **cortes servidos na pedra**: a carne chega selada numa pedra a 250–350 °C e o cliente finaliza no ponto que preferir. A casa abre **só no almoço, de sexta a domingo (11h30–15h30)**, tem **15 mesas** e um terreno com área de lazer (espaço kids, pescaria, animais e passeio a cavalo).
 
