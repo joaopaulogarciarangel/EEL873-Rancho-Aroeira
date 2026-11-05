@@ -12,6 +12,7 @@ Projeto de um sistema para apoiar a operação do **Rancho Aroeira**, um quiosqu
 | Página do projeto (GitHub Pages) | https://joaopaulogarciarangel.github.io/EEL873-Rancho-Aroeira/ |
 | Proposta inicial informal | [seção abaixo](#1-proposta-inicial-informal) |
 | Análise de valor (B2B e B2C) | [seção abaixo](#3-análise-de-valor) |
+| Desejos das partes interessadas (MoSCoW) | [desejos-partes-interessadas.md](desejos-partes-interessadas.md) · [página](https://joaopaulogarciarangel.github.io/EEL873-Rancho-Aroeira/desejos.html) · [PDF](desejos-partes-interessadas.pdf) |
 | Referência das pirâmides | Almquist, Senior e Bloch (2016) — [B2C](https://media.bain.com/elements-of-value/) · Almquist, Cleghorn e Sherer (2018) — [B2B](https://media.bain.com/b2b-eov/index.html) |
 
 ---
