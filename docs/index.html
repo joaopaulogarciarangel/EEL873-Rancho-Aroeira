@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rancho Aroeira — Sistema de Gestão (EEL873)</title><style>*{box-sizing:border-box}body{margin:0;background:#f6f1ea;color:#2b211b;font:16px/1.6 'Segoe UI',system-ui,sans-serif}
+main{max-width:920px;margin:0 auto;padding:40px 20px 60px}
+h1{font-size:2.1rem;color:#5a2414;margin:0 0 4px}h2{color:#5a2414;border-bottom:2px solid #d9b98f;padding-bottom:4px;margin-top:2.2em}
+h3{color:#7a3a1c;margin-top:1.6em}a{color:#a3471d}
+blockquote{margin:12px 0;padding:12px 18px;background:#fff;border-left:4px solid #c8743a;border-radius:4px;font-style:italic}
+.tw{overflow-x:auto}table{border-collapse:collapse;width:100%;background:#fff;margin:10px 0 18px;font-size:.95rem}
+th,td{border:1px solid #e3d3bf;padding:8px 10px;text-align:left;vertical-align:top}th{background:#f1e2cf}
+hr{border:0;border-top:1px solid #e3d3bf;margin:28px 0}
+@media (prefers-color-scheme:dark){body{background:#1d1714;color:#eee3d8}h1,h2{color:#f0b886}h3{color:#e7a372}a{color:#f0a36a}
+blockquote,table{background:#29211c}th{background:#3a2c23}th,td,hr{border-color:#4a3a2f}h2{border-color:#6b4e37}}</style></head>
+<body><main><h1>Sistema de Gestão — Rancho Aroeira</h1>
+<p><strong>EEL873 — Engenharia de Software (UFRJ, 2026/2) · Grupo F</strong></p>
+<p>Projeto de um sistema para apoiar a operação do <strong>Rancho Aroeira</strong>, um quiosque de churrascaria à beira da BR-356 (km 174, Curva de Grussaí, São João da Barra/RJ), especializado em <strong>cortes servidos na pedra</strong>: a carne chega selada numa pedra a 250–350 °C e o cliente finaliza no ponto que preferir. A casa abre <strong>só no almoço, de sexta a domingo (11h30–15h30)</strong>, tem <strong>15 mesas</strong> e um terreno com área de lazer (espaço kids, pescaria, animais e passeio a cavalo).</p>
+<h2>Links</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>O quê</th>
+<th>Onde</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Repositório</td>
+<td><a href="https://github.com/joaopaulogarciarangel/EEL873-Rancho-Aroeira">https://github.com/joaopaulogarciarangel/EEL873-Rancho-Aroeira</a></td>
+</tr>
+<tr>
+<td>Página do projeto (GitHub Pages)</td>
+<td><a href="https://joaopaulogarciarangel.github.io/EEL873-Rancho-Aroeira/">https://joaopaulogarciarangel.github.io/EEL873-Rancho-Aroeira/</a></td>
+</tr>
+<tr>
+<td>Proposta inicial informal</td>
+<td><a href="#proposta">seção abaixo</a></td>
+</tr>
+<tr>
+<td>Análise de valor (B2B e B2C)</td>
+<td><a href="#valor">seção abaixo</a></td>
+</tr>
+<tr>
+<td>Referência das pirâmides</td>
+<td>Almquist, Senior e Bloch (2016) — <a href="https://media.bain.com/elements-of-value/">B2C</a> · Almquist, Cleghorn e Sherer (2018) — <a href="https://media.bain.com/b2b-eov/index.html">B2B</a></td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2 id="proposta">1. Proposta inicial informal</h2>
+<p>Texto enviado ao professor na abertura do trabalho:</p>
+<blockquote>
+<p>Boa noite, professor! Como deve estar aparecendo, esse é o grupo F. Um dos integrantes que sou eu (João Paulo Garcia) tem um pai que acabou de abrir um quiosque de churrascaria na beira da estrada. Sou de Campos dos Goytacazes e fica mais no interior ainda de campos, bem rústico e pouca tecnologia.</p>
+<p>Nisso, pensamos em desenvolver um sistema para que meu pai trabalhe melhor operacionalmente na churrascaria. Nesse sentido, o escopo seria fazer um sistema em que o garçom faça pedidos pelo celular e os pedidos fossem para um monitor da cozinha com os pratos que devem ser preparados. Isso porque atualmente é tudo feito a mão e no papel.</p>
+<p>Além disso, ter uma página de gerenciamento que tenha algumas seções como KPIs do dia/semana/mês/ano, uma seção de monitoramento das mesas do salão com os pedidos e comandas. Além de salvar o histórico de vendas para fazer análises posteriormente e extrair insights da operação.</p>
+<p>Isso pensando e abstraindo inicialmente, pode ser que o projeto se desenvolva mais ao ser produzido e com as possíveis necessidades do meu pai.</p>
+</blockquote>
+<h2>2. O problema e o sistema proposto</h2>
+<p><strong>Situação atual.</strong> Comandas em papel: o garçom anota, leva à cozinha, a cozinha prepara pela ordem em que os papéis chegam e o caixa soma tudo à mão no fim. Os problemas típicos são comanda perdida ou ilegível, item esquecido, ponto da carne trocado, demora no pico do almoço, conta conferida item a item e <strong>nenhum registro</strong> das vendas para saber o que vende mais, em que dia e com que ticket médio.</p>
+<p><strong>Partes do sistema</strong> (o núcleo vem da proposta inicial; as extensões são as "possíveis necessidades" que a proposta já previa e que serão confirmadas com o dono ao longo do projeto):</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Parte</th>
+<th>Quem usa</th>
+<th>O que faz</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>App do garçom</strong> (núcleo)</td>
+<td>Garçons</td>
+<td>Abrir a mesa, lançar pedidos pelo celular (com ponto da carne e acompanhamentos), enviar à cozinha e ao bar, fechar a conta</td>
+</tr>
+<tr>
+<td><strong>Monitor da cozinha</strong> (núcleo)</td>
+<td>Cozinha</td>
+<td>Ver os pedidos em tempo real, em ordem de chegada, com alerta de pedido novo e tempo de espera; marcar como pronto</td>
+</tr>
+<tr>
+<td><strong>Painel do gestor</strong> (núcleo)</td>
+<td>Dono / gestor</td>
+<td>KPIs do dia, semana, mês e ano; mesas do salão com pedidos e comandas; caixa; histórico de vendas exportável para análise</td>
+</tr>
+<tr>
+<td>Controle financeiro (extensão)</td>
+<td>Dono</td>
+<td>Taxa de serviço de 10% e sua divisão entre a equipe; estoque de insumos; demonstrativos semanais</td>
+</tr>
+<tr>
+<td>Pedido do cliente pela mesa (extensão)</td>
+<td>Clientes</td>
+<td>QR code em cada mesa: o cliente vê o cardápio, pede pelo próprio celular e acompanha a comanda da mesa</td>
+</tr>
+<tr>
+<td>Site público (extensão)</td>
+<td>Clientes e público</td>
+<td>Cardápio com preços, horário (aberto/fechado agora), como chegar, reservas, orçamento de eventos e um canal de recados anônimos</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Restrições do contexto.</strong> Equipe e clientes com <strong>pouca familiaridade com tecnologia</strong> (interface muito simples, sem instalar aplicativo), uso <strong>pelo celular</strong>, beira de estrada com <strong>internet instável</strong>, e <strong>orçamento baixo</strong> de uma empresa familiar recém-aberta.</p>
+<h2 id="valor">3. Análise de valor</h2>
+<p>A análise usa as duas pirâmides de <strong>Elementos do Valor</strong> apresentadas no Capítulo 4 do livro-texto:</p>
+<ul>
+<li><strong>B2B</strong> (Almquist, Cleghorn e Sherer, 2018; 40 elementos): o software é "vendido" a uma <strong>organização</strong> — o próprio Rancho Aroeira, representado pelo dono e usado pela equipe.</li>
+<li><strong>B2C</strong> (Almquist, Senior e Bloch, 2016; 30 elementos): as extensões voltadas ao <strong>cliente do restaurante</strong> (pedido pela mesa e site) entregam valor a <strong>pessoas</strong>.</li>
+</ul>
+<p>Como o livro recomenda, não se marca a pirâmide inteira: foram escolhidos os elementos <strong>mais importantes para este cliente</strong>, com a justificativa de cada um. Os níveis vão da base (essencial) ao topo.</p>
+<h3>3.1. Pirâmide B2B — o Rancho Aroeira como cliente</h3>
+<p><strong>Compromissos básicos</strong> <em>(table stakes — sem eles o sistema não é aceito)</em></p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Elemento</th>
+<th>Por que foi escolhido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Satisfazer especificações</td>
+<td>O garçom precisa lançar o pedido e ele precisa chegar à cozinha, sempre. Se falhar num sábado cheio, o sistema é abandonado e volta o papel</td>
+</tr>
+<tr>
+<td>Preço aceitável</td>
+<td>Empresa familiar recém-aberta: o sistema deve rodar com custo mensal próximo de zero (serviços de nuvem em planos gratuitos) e celulares que a equipe já tem</td>
+</tr>
+<tr>
+<td>Conformidade regulatória</td>
+<td>Reservas e recados guardam dados pessoais de clientes (LGPD); o histórico de vendas precisa bater com o caixa</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Valor funcional</strong></p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Elemento</th>
+<th>Por que foi escolhido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Redução de custos</td>
+<td>Menos pratos refeitos por erro de comanda, menos desperdício e menos tempo gasto somando contas à mão</td>
+</tr>
+<tr>
+<td>Aumento de receitas</td>
+<td>Mesa atendida mais rápido gira mais no almoço de 4 horas; nenhum item consumido fica fora da conta; o site e as reservas trazem clientes novos</td>
+</tr>
+<tr>
+<td>Qualidade do produto</td>
+<td>O ponto da carne e os acompanhamentos chegam à cozinha exatamente como o cliente pediu — numa casa de cortes na pedra, o ponto <strong>é</strong> o produto</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Valor da facilidade de fazer negócios</strong></p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Elemento</th>
+<th>Por que foi escolhido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Poupar tempo</td>
+<td>O pedido vai do celular do garçom ao monitor da cozinha sem ninguém andar até lá</td>
+</tr>
+<tr>
+<td>Reduzir esforço</td>
+<td>Fechar a conta vira um clique, com taxa de serviço e forma de pagamento já calculadas</td>
+</tr>
+<tr>
+<td>Diminuir problemas</td>
+<td>Fim da comanda perdida, ilegível ou esquecida — a principal dor da operação em papel</td>
+</tr>
+<tr>
+<td>Informação</td>
+<td>KPIs do dia, semana, mês e ano e o histórico de vendas: o dono passa a saber o que vende, quando e quanto</td>
+</tr>
+<tr>
+<td>Transparência</td>
+<td>O dono enxerga em tempo real as mesas abertas, o que cada uma pediu e o que está atrasado</td>
+</tr>
+<tr>
+<td>Organização</td>
+<td>Pedidos em ordem de chegada na cozinha, separados por setor (cozinha e bar)</td>
+</tr>
+<tr>
+<td>Integração</td>
+<td>Garçom, cozinha, caixa, estoque e relatórios trabalham sobre os mesmos dados, sem redigitar</td>
+</tr>
+<tr>
+<td>Simplificação</td>
+<td>Interface com poucos botões e linguagem do dia a dia, para uma equipe com pouca tecnologia</td>
+</tr>
+<tr>
+<td>Disponibilidade</td>
+<td>Funciona no celular, sem instalar nada, de qualquer lugar — inclusive para o dono acompanhar de casa</td>
+</tr>
+<tr>
+<td>Configurabilidade</td>
+<td>Cardápio, preços e número de mesas ajustáveis sem mexer no código</td>
+</tr>
+<tr>
+<td>Ajuste cultural</td>
+<td>O sistema deve caber num quiosque rústico de beira de estrada, não exigir que a casa vire um restaurante de shopping</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Valor individual</strong></p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Elemento</th>
+<th>Por que foi escolhido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Redução da ansiedade</td>
+<td>O dono deixa de depender da memória e dos papéis para saber se cada mesa foi atendida e cobrada</td>
+</tr>
+<tr>
+<td>Crescimento e desenvolvimento</td>
+<td>A equipe aprende a trabalhar com ferramentas digitais simples, o que aumenta sua qualificação</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Valor inspiracional</strong></p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Elemento</th>
+<th>Por que foi escolhido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Visão</td>
+<td>O histórico de vendas permite antecipar tendências (dias e pratos mais vendidos, efeito do clima, sazonalidade) e decidir com dados</td>
+</tr>
+<tr>
+<td>Esperança</td>
+<td>Um negócio que acabou de abrir ganha estrutura para crescer sem perder o controle</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Elementos não escolhidos (e por quê):</strong> <em>escalabilidade</em> e <em>alcance</em> — é uma casa só, de 15 mesas, sem plano de rede; <em>inovação</em> — o objetivo é resolver a operação, não ser pioneiro; <em>expansão da rede</em> e <em>marketability</em> (carreira) — não se aplicam a um negócio familiar; <em>responsabilidade social</em> — o sistema não tem impacto social direto além do próprio negócio.</p>
+<h3>3.2. Pirâmide B2C — o cliente do restaurante</h3>
+<p><strong>Valor funcional</strong></p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Elemento</th>
+<th>Por que foi escolhido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Poupar tempo</td>
+<td>Pedir pelo celular da mesa sem esperar o garçom passar, no horário de pico</td>
+</tr>
+<tr>
+<td>Informar</td>
+<td>Cardápio com fotos e preços, horário com aviso de "aberto agora", rota até o local na rodovia e a comanda da mesa sempre visível</td>
+</tr>
+<tr>
+<td>Reduzir esforço</td>
+<td>Reservar mesa ou pedir orçamento de evento pelo site, sem ligar</td>
+</tr>
+<tr>
+<td>Evitar problemas</td>
+<td>O pedido chega à cozinha como o cliente escolheu (ponto e acompanhamentos), e a conta não traz surpresas</td>
+</tr>
+<tr>
+<td>Variedade</td>
+<td>O cardápio completo à mão, com tamanhos (para 2 ou para 4) e acompanhamentos, ajuda a escolher</td>
+</tr>
+<tr>
+<td>Conectar com outras pessoas</td>
+<td>Mesa com vários celulares compartilha uma só comanda — a família pede junta</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Valor emocional</strong></p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Elemento</th>
+<th>Por que foi escolhido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Reduzir ansiedade</td>
+<td>Ver a comanda da mesa e o total a qualquer momento; deixar um recado anônimo sem constrangimento</td>
+</tr>
+<tr>
+<td>Design e estética</td>
+<td>O site e o cardápio digital transmitem a identidade rústica da casa (pedra, brasa, aroeira)</td>
+</tr>
+<tr>
+<td>Diversão e entretenimento</td>
+<td>O site mostra o lazer do terreno (espaço kids, pescaria, animais, cavalo), que faz parte da experiência do almoço</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Valor de mudança de vida</strong></p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Elemento</th>
+<th>Por que foi escolhido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Afiliação e pertencimento</td>
+<td>A página da história da casa (uma família, um terreno à beira da estrada) aproxima o cliente de um negócio familiar do interior</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Impacto social:</strong> não foi escolhido — o sistema não tem efeito sobre a sociedade além dos clientes e da própria casa.</p>
+<p><strong>Elementos não escolhidos (e por quê):</strong> <em>fazer dinheiro</em> e <em>reduzir custo</em> para o cliente — o preço do prato não muda com o sistema; <em>integrar</em> e <em>organizar</em> a vida do cliente — o uso é pontual, durante o almoço; <em>nostalgia</em>, <em>status</em>, <em>bem-estar</em> e <em>valor terapêutico</em> — vêm da experiência no restaurante, não do software.</p>
+<h2>4. Próximos passos</h2>
+<p>Elicitação de requisitos com o dono e a equipe, histórias do usuário, casos de uso, modelagem do processo de atendimento em BPMN e priorização das extensões pelo método MoSCoW. Este repositório será atualizado a cada entrega da disciplina.</p></main></body></html>
