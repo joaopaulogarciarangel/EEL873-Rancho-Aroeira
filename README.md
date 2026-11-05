@@ -41,9 +41,10 @@ Texto enviado ao professor na abertura do trabalho:
 | **Painel do gestor** (núcleo) | Dono / gestor | KPIs do dia, semana, mês e ano; mesas do salão com pedidos e comandas; caixa; histórico de vendas exportável para análise |
 | Controle financeiro (extensão) | Dono | Taxa de serviço de 10% e sua divisão entre a equipe; estoque de insumos; demonstrativos semanais |
 | Pedido do cliente pela mesa (extensão) | Clientes | QR code em cada mesa: o cliente vê o cardápio, pede pelo próprio celular e acompanha a comanda da mesa |
+| Pedido por voz com IA (extensão) | Clientes | Na mesa, o cliente **fala ou escreve** o pedido em linguagem natural ("uma picanha para dois, ao ponto, com farofa e duas cocas"); uma IA interpreta a fala, monta os itens com tamanho, ponto e acompanhamentos, **pergunta quando o pedido é ambíguo** ("qual picanha?") e o cliente confirma antes de enviar à cozinha. A IA nunca define preço nem envia sozinha: os itens passam pelas mesmas regras do cardápio |
 | Site público (extensão) | Clientes e público | Cardápio com preços, horário (aberto/fechado agora), como chegar, reservas, orçamento de eventos e um canal de recados anônimos |
 
-**Restrições do contexto.** Equipe e clientes com **pouca familiaridade com tecnologia** (interface muito simples, sem instalar aplicativo), uso **pelo celular**, beira de estrada com **internet instável**, e **orçamento baixo** de uma empresa familiar recém-aberta.
+**Restrições do contexto.** Equipe e clientes com **pouca familiaridade com tecnologia** (interface muito simples, sem instalar aplicativo), uso **pelo celular**, beira de estrada com **internet instável**, e **orçamento baixo** de uma empresa familiar recém-aberta — inclusive para a IA, que deve priorizar serviços com plano gratuito e ter limite de uso por mesa.
 
 ## 3. Análise de valor
 
@@ -71,19 +72,20 @@ Como o livro recomenda, não se marca a pirâmide inteira: foram escolhidos os e
 | Redução de custos | Menos pratos refeitos por erro de comanda, menos desperdício e menos tempo gasto somando contas à mão |
 | Aumento de receitas | Mesa atendida mais rápido gira mais no almoço de 4 horas; nenhum item consumido fica fora da conta; o site e as reservas trazem clientes novos |
 | Qualidade do produto | O ponto da carne e os acompanhamentos chegam à cozinha exatamente como o cliente pediu — numa casa de cortes na pedra, o ponto **é** o produto |
+| Inovação | Pedido por voz com IA, que entende o jeito de falar do cliente, num quiosque de beira de estrada — algo raro mesmo em restaurantes grandes |
 
 **Valor da facilidade de fazer negócios**
 
 | Elemento | Por que foi escolhido |
 |---|---|
 | Poupar tempo | O pedido vai do celular do garçom ao monitor da cozinha sem ninguém andar até lá |
-| Reduzir esforço | Fechar a conta vira um clique, com taxa de serviço e forma de pagamento já calculadas |
+| Reduzir esforço | Fechar a conta vira um clique, com taxa de serviço e forma de pagamento já calculadas; no pico, o pedido por voz deixa o cliente pedir sozinho e o garçom fica livre para servir |
 | Diminuir problemas | Fim da comanda perdida, ilegível ou esquecida — a principal dor da operação em papel |
 | Informação | KPIs do dia, semana, mês e ano e o histórico de vendas: o dono passa a saber o que vende, quando e quanto |
 | Transparência | O dono enxerga em tempo real as mesas abertas, o que cada uma pediu e o que está atrasado |
 | Organização | Pedidos em ordem de chegada na cozinha, separados por setor (cozinha e bar) |
 | Integração | Garçom, cozinha, caixa, estoque e relatórios trabalham sobre os mesmos dados, sem redigitar |
-| Simplificação | Interface com poucos botões e linguagem do dia a dia, para uma equipe com pouca tecnologia |
+| Simplificação | Interface com poucos botões e linguagem do dia a dia, para uma equipe com pouca tecnologia; para o cliente, falar é mais simples que navegar num cardápio de 76 itens |
 | Disponibilidade | Funciona no celular, sem instalar nada, de qualquer lugar — inclusive para o dono acompanhar de casa |
 | Configurabilidade | Cardápio, preços e número de mesas ajustáveis sem mexer no código |
 | Ajuste cultural | O sistema deve caber num quiosque rústico de beira de estrada, não exigir que a casa vire um restaurante de shopping |
@@ -102,7 +104,7 @@ Como o livro recomenda, não se marca a pirâmide inteira: foram escolhidos os e
 | Visão | O histórico de vendas permite antecipar tendências (dias e pratos mais vendidos, efeito do clima, sazonalidade) e decidir com dados |
 | Esperança | Um negócio que acabou de abrir ganha estrutura para crescer sem perder o controle |
 
-**Elementos não escolhidos (e por quê):** *escalabilidade* e *alcance* — é uma casa só, de 15 mesas, sem plano de rede; *inovação* — o objetivo é resolver a operação, não ser pioneiro; *expansão da rede* e *marketability* (carreira) — não se aplicam a um negócio familiar; *responsabilidade social* — o sistema não tem impacto social direto além do próprio negócio.
+**Elementos não escolhidos (e por quê):** *escalabilidade* e *alcance* — é uma casa só, de 15 mesas, sem plano de rede; *expansão da rede* e *marketability* (carreira) — não se aplicam a um negócio familiar; *responsabilidade social* — o sistema não tem impacto social direto além do próprio negócio.
 
 ### 3.2. Pirâmide B2C — o cliente do restaurante
 
@@ -110,9 +112,9 @@ Como o livro recomenda, não se marca a pirâmide inteira: foram escolhidos os e
 
 | Elemento | Por que foi escolhido |
 |---|---|
-| Poupar tempo | Pedir pelo celular da mesa sem esperar o garçom passar, no horário de pico |
+| Poupar tempo | Pedir pelo celular da mesa sem esperar o garçom passar, no horário de pico — falando o pedido inteiro de uma vez |
 | Informar | Cardápio com fotos e preços, horário com aviso de "aberto agora", rota até o local na rodovia e a comanda da mesa sempre visível |
-| Reduzir esforço | Reservar mesa ou pedir orçamento de evento pelo site, sem ligar |
+| Reduzir esforço | Pedir **por voz**, sem procurar item por item no cardápio — importante para quem tem pouca familiaridade com celular; reservar mesa ou pedir orçamento pelo site, sem ligar |
 | Evitar problemas | O pedido chega à cozinha como o cliente escolheu (ponto e acompanhamentos), e a conta não traz surpresas |
 | Variedade | O cardápio completo à mão, com tamanhos (para 2 ou para 4) e acompanhamentos, ajuda a escolher |
 | Conectar com outras pessoas | Mesa com vários celulares compartilha uma só comanda — a família pede junta |
@@ -123,7 +125,7 @@ Como o livro recomenda, não se marca a pirâmide inteira: foram escolhidos os e
 |---|---|
 | Reduzir ansiedade | Ver a comanda da mesa e o total a qualquer momento; deixar um recado anônimo sem constrangimento |
 | Design e estética | O site e o cardápio digital transmitem a identidade rústica da casa (pedra, brasa, aroeira) |
-| Diversão e entretenimento | O site mostra o lazer do terreno (espaço kids, pescaria, animais, cavalo), que faz parte da experiência do almoço |
+| Diversão e entretenimento | Conversar com um atendente virtual que entende o pedido é uma novidade divertida na mesa; o site mostra o lazer do terreno (espaço kids, pescaria, animais, cavalo), que faz parte da experiência do almoço |
 
 **Valor de mudança de vida**
 
@@ -137,4 +139,4 @@ Como o livro recomenda, não se marca a pirâmide inteira: foram escolhidos os e
 
 ## 4. Próximos passos
 
-Elicitação de requisitos com o dono e a equipe, histórias do usuário, casos de uso, modelagem do processo de atendimento em BPMN e priorização das extensões pelo método MoSCoW. Este repositório será atualizado a cada entrega da disciplina.
+Elicitação de requisitos com o dono e a equipe, testes do pedido por voz com falas reais de clientes, histórias do usuário, casos de uso, modelagem do processo de atendimento em BPMN e priorização das extensões pelo método MoSCoW. Este repositório será atualizado a cada entrega da disciplina.
