@@ -53,7 +53,7 @@ blockquote,table{background:#29211c}th{background:#3a2c23}th,td,hr{border-color:
 </table></div>
 <p><strong>Fora do escopo:</strong> emissão de nota fiscal eletrônica; pagamento on-line pelo celular; delivery e integração com aplicativos de entrega; aplicativo nativo de loja (o sistema roda no navegador); controle financeiro e contábil completo.</p>
 <p><strong>Critérios de aceitação.</strong> Um almoço inteiro operado só pelo sistema, sem comanda de papel; todo pedido lançado aparece na cozinha em poucos segundos; o fechamento de conta bate com a soma dos itens; o proprietário consegue ver e exportar as vendas do dia.</p>
-<p><strong>Premissas.</strong> O restaurante tem internet Wi-Fi no salão; garçons usam o próprio celular; o proprietário dedica parte do tempo às atividades de requisitos, cadastro do cardápio, testes, treinamento e implantação; hospedagem e banco de dados em planos gratuitos.</p>
+<p><strong>Premissas.</strong> O restaurante tem internet Wi-Fi no salão; garçons usam o próprio celular; o proprietário dedica parte do tempo às atividades de requisitos, cadastro do cardápio, testes, treinamento e implantação; hospedagem, banco de dados e o serviço de IA do pedido por voz em planos gratuitos; o grupo usa o Claude Code (plano Max) como assistente de programação durante todo o desenvolvimento.</p>
 <p><strong>Restrições.</strong> Prazo do semestre letivo; orçamento pequeno (negócio familiar); equipe de quatro alunos em tempo parcial; o sistema não pode parar o atendimento durante a implantação.</p>
 <h2>2. EAP — Estrutura Analítica do Projeto</h2>
 <p>EAP orientada a <strong>entregas</strong>, em três níveis. Os elementos do último nível são os <strong>pacotes de trabalho</strong>; cada um vira uma atividade do cronograma (letras A–P). Pela <strong>regra dos 100%</strong>, a soma dos pacotes cobre todo o escopo descrito acima — e nada fora dele.</p>
@@ -607,10 +607,10 @@ blockquote,table{background:#29211c}th{background:#3a2c23}th,td,hr{border-color:
 <td>15 placas de QR code para as mesas</td>
 </tr>
 <tr>
-<td>Serviço de IA</td>
-<td>custo por uso</td>
-<td>R$ 5,00 por dia</td>
-<td>Uso do serviço de IA (transcrição e interpretação). estimado por dia de uso</td>
+<td>Claude Code (plano Max 5x)</td>
+<td>assinatura mensal</td>
+<td>R$ 550,00 por mês</td>
+<td>Assistente de IA para programação, usado pelo grupo durante todo o desenvolvimento: US$ 100/mês, convertidos a R$ 5,50 por dólar</td>
 </tr>
 </tbody>
 </table></div>
@@ -631,17 +631,17 @@ blockquote,table{background:#29211c}th{background:#3a2c23}th,td,hr{border-color:
 <tr>
 <td>B</td>
 <td>Especificar histórias e casos de uso</td>
-<td>2 Dev</td>
+<td>2 Dev; Claude Code</td>
 </tr>
 <tr>
 <td>C</td>
 <td>Configurar banco de dados e hospedagem</td>
-<td>1 Dev</td>
+<td>1 Dev; Claude Code</td>
 </tr>
 <tr>
 <td>D</td>
 <td>Implementar autenticação da equipe</td>
-<td>1 Dev</td>
+<td>1 Dev; Claude Code</td>
 </tr>
 <tr>
 <td>E</td>
@@ -651,47 +651,47 @@ blockquote,table{background:#29211c}th{background:#3a2c23}th,td,hr{border-color:
 <tr>
 <td>F</td>
 <td>Desenvolver o app do garçom</td>
-<td>2 Dev</td>
+<td>2 Dev; Claude Code</td>
 </tr>
 <tr>
 <td>G</td>
 <td>Desenvolver o monitor da cozinha</td>
-<td>1 Dev; Monitor da cozinha</td>
+<td>1 Dev; Monitor da cozinha; Claude Code</td>
 </tr>
 <tr>
 <td>H</td>
 <td>Desenvolver caixa e fechamento de conta</td>
-<td>1 Dev; Impressora térmica</td>
+<td>1 Dev; Impressora térmica; Claude Code</td>
 </tr>
 <tr>
 <td>I</td>
 <td>Desenvolver painel do gestor e histórico</td>
-<td>1 Dev</td>
+<td>1 Dev; Claude Code</td>
 </tr>
 <tr>
 <td>J</td>
 <td>Desenvolver estoque e comissão</td>
-<td>1 Dev</td>
+<td>1 Dev; Claude Code</td>
 </tr>
 <tr>
 <td>K</td>
 <td>Desenvolver pedido pela mesa (QR code)</td>
-<td>2 Dev; QR codes impressos</td>
+<td>2 Dev; QR codes impressos; Claude Code</td>
 </tr>
 <tr>
 <td>L</td>
 <td>Desenvolver pedido por voz com IA</td>
-<td>2 Dev; Serviço de IA</td>
+<td>2 Dev; Claude Code</td>
 </tr>
 <tr>
 <td>M</td>
 <td>Desenvolver site público</td>
-<td>1 Dev</td>
+<td>1 Dev; Claude Code</td>
 </tr>
 <tr>
 <td>N</td>
 <td>Testar o sistema na operação</td>
-<td>2 Dev; 1 Dono; Serviço de IA</td>
+<td>2 Dev; 1 Dono; Claude Code</td>
 </tr>
 <tr>
 <td>O</td>
@@ -705,9 +705,10 @@ blockquote,table{background:#29211c}th{background:#3a2c23}th,td,hr{border-color:
 </tr>
 </tbody>
 </table></div>
+<p>O <strong>Claude Code</strong> é <strong>uma</strong> assinatura mensal para o grupo: aparece nas atividades de especificação, desenvolvimento e testes, mas o custo é contado <strong>por mês</strong>, não por atividade — atividades em paralelo usam a mesma assinatura.</p>
 <p>Hospedagem e banco de dados usam <strong>planos gratuitos</strong> (custo R$ 0) e os celulares são os que a equipe e os clientes já têm; por isso não entram no orçamento.</p>
 <h2>6. Custos e BAC</h2>
-<p>Custo de cada atividade = soma de (custo diário × unidades × duração) dos recursos de trabalho e de uso, mais os materiais de custo único. O <strong>BAC</strong> (<em>Budget at Completion</em>, orçamento no término) é a soma dos custos planejados de todas as atividades — é o valor planejado total da linha de base, usado depois no gerenciamento do valor agregado (EVM).</p>
+<p>Custo de cada atividade = soma de (custo diário × unidades × duração) dos recursos de trabalho e de uso, mais os materiais de custo único. A assinatura do Claude Code entra como custo mensal do projeto, nos três meses do cronograma. O <strong>BAC</strong> (<em>Budget at Completion</em>, orçamento no término) é a soma dos custos planejados de todas as atividades — é o valor planejado total da linha de base, usado depois no gerenciamento do valor agregado (EVM).</p>
 <div class="tw"><table>
 <thead>
 <tr>
@@ -787,39 +788,58 @@ blockquote,table{background:#29211c}th{background:#3a2c23}th,td,hr{border-color:
 <tr>
 <td>L</td>
 <td>Desenvolver pedido por voz com IA</td>
-<td>2.050,00</td>
-<td>13.120,00</td>
+<td>2.000,00</td>
+<td>13.070,00</td>
 </tr>
 <tr>
 <td>M</td>
 <td>Desenvolver site público</td>
 <td>600,00</td>
-<td>13.720,00</td>
+<td>13.670,00</td>
 </tr>
 <tr>
 <td>N</td>
 <td>Testar o sistema na operação</td>
-<td>1.950,00</td>
-<td>15.670,00</td>
+<td>1.920,00</td>
+<td>15.590,00</td>
 </tr>
 <tr>
 <td>O</td>
 <td>Treinar garçons e cozinha</td>
 <td>440,00</td>
-<td>16.110,00</td>
+<td>16.030,00</td>
 </tr>
 <tr>
 <td>P</td>
 <td>Implantar em produção</td>
 <td>320,00</td>
-<td>16.430,00</td>
+<td>16.350,00</td>
+</tr>
+<tr>
+<td>—</td>
+<td>Assinatura Claude Code Max — agosto</td>
+<td>550,00</td>
+<td>16.900,00</td>
+</tr>
+<tr>
+<td>—</td>
+<td>Assinatura Claude Code Max — setembro</td>
+<td>550,00</td>
+<td>17.450,00</td>
+</tr>
+<tr>
+<td>—</td>
+<td>Assinatura Claude Code Max — outubro</td>
+<td>550,00</td>
+<td>18.000,00</td>
 </tr>
 <tr>
 <td></td>
 <td><strong>BAC</strong></td>
-<td><strong>16.430,00</strong></td>
+<td><strong>18.000,00</strong></td>
 <td></td>
 </tr>
 </tbody>
 </table></div>
-<p><strong>BAC = R$ 16.430,00.</strong> Esse é o valor planejado (PV) acumulado no fim do cronograma (29/10/2026); durante a execução, o valor agregado (EV) e o custo real (AC) serão comparados a ele para calcular o desempenho de prazo (SPI = EV/PV) e de custo (CPI = EV/AC).</p></main></body></html>
+<p>Atividades A–P: R$ 16.350,00 · Assinatura do Claude Code (3 meses × R$ 550,00): R$ 1.650,00.</p>
+<p><strong>BAC = R$ 18.000,00.</strong> Esse é o valor planejado (PV) acumulado no fim do cronograma (29/10/2026); durante a execução, o valor agregado (EV) e o custo real (AC) serão comparados a ele para calcular o desempenho de prazo (SPI = EV/PV) e de custo (CPI = EV/AC).</p></main></body></html>

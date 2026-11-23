@@ -25,7 +25,7 @@ Conteúdo: 1. Descrição do escopo · 2. EAP · 3. Diagrama de rede e tabela ·
 
 **Critérios de aceitação.** Um almoço inteiro operado só pelo sistema, sem comanda de papel; todo pedido lançado aparece na cozinha em poucos segundos; o fechamento de conta bate com a soma dos itens; o proprietário consegue ver e exportar as vendas do dia.
 
-**Premissas.** O restaurante tem internet Wi-Fi no salão; garçons usam o próprio celular; o proprietário dedica parte do tempo às atividades de requisitos, cadastro do cardápio, testes, treinamento e implantação; hospedagem e banco de dados em planos gratuitos.
+**Premissas.** O restaurante tem internet Wi-Fi no salão; garçons usam o próprio celular; o proprietário dedica parte do tempo às atividades de requisitos, cadastro do cardápio, testes, treinamento e implantação; hospedagem, banco de dados e o serviço de IA do pedido por voz em planos gratuitos; o grupo usa o Claude Code (plano Max) como assistente de programação durante todo o desenvolvimento.
 
 **Restrições.** Prazo do semestre letivo; orçamento pequeno (negócio familiar); equipe de quatro alunos em tempo parcial; o sistema não pode parar o atendimento durante a implantação.
 
@@ -129,32 +129,35 @@ Início em **17/08/2026**, dias úteis de segunda a sexta, sem os feriados nacio
 | Monitor da cozinha | material | R$ 800,00 (único) | Monitor/TV para a cozinha |
 | Impressora térmica | material | R$ 450,00 (único) | Impressora de cupom do caixa |
 | QR codes impressos | material | R$ 60,00 (único) | 15 placas de QR code para as mesas |
-| Serviço de IA | custo por uso | R$ 5,00 por dia | Uso do serviço de IA (transcrição e interpretação). estimado por dia de uso |
+| Claude Code (plano Max 5x) | assinatura mensal | R$ 550,00 por mês | Assistente de IA para programação, usado pelo grupo durante todo o desenvolvimento: US$ 100/mês, convertidos a R$ 5,50 por dólar |
 
 | Ativ. | Descrição | Recursos alocados |
 |---|---|---|
 | A | Levantar requisitos com o dono e a equipe | 2 Dev; 1 Dono |
-| B | Especificar histórias e casos de uso | 2 Dev |
-| C | Configurar banco de dados e hospedagem | 1 Dev |
-| D | Implementar autenticação da equipe | 1 Dev |
+| B | Especificar histórias e casos de uso | 2 Dev; Claude Code |
+| C | Configurar banco de dados e hospedagem | 1 Dev; Claude Code |
+| D | Implementar autenticação da equipe | 1 Dev; Claude Code |
 | E | Cadastrar o cardápio | 1 Dev; 1 Dono |
-| F | Desenvolver o app do garçom | 2 Dev |
-| G | Desenvolver o monitor da cozinha | 1 Dev; Monitor da cozinha |
-| H | Desenvolver caixa e fechamento de conta | 1 Dev; Impressora térmica |
-| I | Desenvolver painel do gestor e histórico | 1 Dev |
-| J | Desenvolver estoque e comissão | 1 Dev |
-| K | Desenvolver pedido pela mesa (QR code) | 2 Dev; QR codes impressos |
-| L | Desenvolver pedido por voz com IA | 2 Dev; Serviço de IA |
-| M | Desenvolver site público | 1 Dev |
-| N | Testar o sistema na operação | 2 Dev; 1 Dono; Serviço de IA |
+| F | Desenvolver o app do garçom | 2 Dev; Claude Code |
+| G | Desenvolver o monitor da cozinha | 1 Dev; Monitor da cozinha; Claude Code |
+| H | Desenvolver caixa e fechamento de conta | 1 Dev; Impressora térmica; Claude Code |
+| I | Desenvolver painel do gestor e histórico | 1 Dev; Claude Code |
+| J | Desenvolver estoque e comissão | 1 Dev; Claude Code |
+| K | Desenvolver pedido pela mesa (QR code) | 2 Dev; QR codes impressos; Claude Code |
+| L | Desenvolver pedido por voz com IA | 2 Dev; Claude Code |
+| M | Desenvolver site público | 1 Dev; Claude Code |
+| N | Testar o sistema na operação | 2 Dev; 1 Dono; Claude Code |
 | O | Treinar garçons e cozinha | 1 Dev; 1 Dono |
 | P | Implantar em produção | 2 Dev; 1 Dono |
+
+O **Claude Code** é **uma** assinatura mensal para o grupo: aparece nas atividades de especificação, desenvolvimento e testes, mas o custo é contado **por mês**, não por atividade — atividades em paralelo usam a mesma assinatura.
+
 
 Hospedagem e banco de dados usam **planos gratuitos** (custo R$ 0) e os celulares são os que a equipe e os clientes já têm; por isso não entram no orçamento.
 
 ## 6. Custos e BAC
 
-Custo de cada atividade = soma de (custo diário × unidades × duração) dos recursos de trabalho e de uso, mais os materiais de custo único. O **BAC** (*Budget at Completion*, orçamento no término) é a soma dos custos planejados de todas as atividades — é o valor planejado total da linha de base, usado depois no gerenciamento do valor agregado (EVM).
+Custo de cada atividade = soma de (custo diário × unidades × duração) dos recursos de trabalho e de uso, mais os materiais de custo único. A assinatura do Claude Code entra como custo mensal do projeto, nos três meses do cronograma. O **BAC** (*Budget at Completion*, orçamento no término) é a soma dos custos planejados de todas as atividades — é o valor planejado total da linha de base, usado depois no gerenciamento do valor agregado (EVM).
 
 | Ativ. | Descrição | Custo planejado (R$) | Custo acumulado (R$) |
 |---|---|---|---|
@@ -169,11 +172,16 @@ Custo de cada atividade = soma de (custo diário × unidades × duração) dos r
 | I | Desenvolver painel do gestor e histórico | 800,00 | 8.910,00 |
 | J | Desenvolver estoque e comissão | 500,00 | 9.410,00 |
 | K | Desenvolver pedido pela mesa (QR code) | 1.660,00 | 11.070,00 |
-| L | Desenvolver pedido por voz com IA | 2.050,00 | 13.120,00 |
-| M | Desenvolver site público | 600,00 | 13.720,00 |
-| N | Testar o sistema na operação | 1.950,00 | 15.670,00 |
-| O | Treinar garçons e cozinha | 440,00 | 16.110,00 |
-| P | Implantar em produção | 320,00 | 16.430,00 |
-| | **BAC** | **16.430,00** | |
+| L | Desenvolver pedido por voz com IA | 2.000,00 | 13.070,00 |
+| M | Desenvolver site público | 600,00 | 13.670,00 |
+| N | Testar o sistema na operação | 1.920,00 | 15.590,00 |
+| O | Treinar garçons e cozinha | 440,00 | 16.030,00 |
+| P | Implantar em produção | 320,00 | 16.350,00 |
+| — | Assinatura Claude Code Max — agosto | 550,00 | 16.900,00 |
+| — | Assinatura Claude Code Max — setembro | 550,00 | 17.450,00 |
+| — | Assinatura Claude Code Max — outubro | 550,00 | 18.000,00 |
+| | **BAC** | **18.000,00** | |
 
-**BAC = R$ 16.430,00.** Esse é o valor planejado (PV) acumulado no fim do cronograma (29/10/2026); durante a execução, o valor agregado (EV) e o custo real (AC) serão comparados a ele para calcular o desempenho de prazo (SPI = EV/PV) e de custo (CPI = EV/AC).
+Atividades A–P: R$ 16.350,00 · Assinatura do Claude Code (3 meses × R$ 550,00): R$ 1.650,00.
+
+**BAC = R$ 18.000,00.** Esse é o valor planejado (PV) acumulado no fim do cronograma (29/10/2026); durante a execução, o valor agregado (EV) e o custo real (AC) serão comparados a ele para calcular o desempenho de prazo (SPI = EV/PV) e de custo (CPI = EV/AC).
