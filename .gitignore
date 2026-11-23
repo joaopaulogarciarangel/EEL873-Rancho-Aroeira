@@ -1,2 +1,5 @@
 .build.py
 .diagrama.py
+.plano.py
+.eap.py
+.plano_out.md

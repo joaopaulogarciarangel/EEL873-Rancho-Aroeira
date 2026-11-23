@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1328" height="454" font-family="Segoe UI,Arial,sans-serif"><rect width="100%" height="100%" fill="#fff"/>
+<rect x="564.0" y="20" width="200" height="58" rx="4" fill="#e8c9a0" stroke="#6b3a1f" stroke-width="1.3"/><text x="664.0" y="37" font-size="12" font-weight="bold" text-anchor="middle">1</text><text x="664.0" y="53" font-size="11.5" text-anchor="middle" font-weight="bold">Sistema de Gestão do Rancho</text><text x="664.0" y="67" font-size="11.5" text-anchor="middle">Aroeira</text>
+<line x1="664.0" y1="78" x2="664.0" y2="110" stroke="#555"/>
+<line x1="110.0" y1="110" x2="1200.0" y2="110" stroke="#555"/>
+<line x1="110.0" y1="110" x2="110.0" y2="130" stroke="#555"/>
+<rect x="10" y="130" width="200" height="58" rx="4" fill="#fff4d6" stroke="#6b3a1f" stroke-width="1.3"/><text x="110.0" y="147" font-size="12" font-weight="bold" text-anchor="middle">1.1</text><text x="110.0" y="163" font-size="11.5" text-anchor="middle" font-weight="bold">Requisitos e especificação</text>
+<line x1="22" y1="188" x2="22" y2="319.0" stroke="#555"/>
+<line x1="22" y1="247.0" x2="36" y2="247.0" stroke="#555"/>
+<rect x="36" y="218" width="174" height="58" rx="4" fill="#fff" stroke="#6b3a1f" stroke-width="1.3"/><text x="123.0" y="235" font-size="12" font-weight="bold" text-anchor="middle">1.1.1</text><text x="123.0" y="251" font-size="11.5" text-anchor="middle">Levantar requisitos com o</text><text x="123.0" y="265" font-size="11.5" text-anchor="middle">dono e a equipe</text>
+<line x1="22" y1="319.0" x2="36" y2="319.0" stroke="#555"/>
+<rect x="36" y="290" width="174" height="58" rx="4" fill="#fff" stroke="#6b3a1f" stroke-width="1.3"/><text x="123.0" y="307" font-size="12" font-weight="bold" text-anchor="middle">1.1.2</text><text x="123.0" y="323" font-size="11.5" text-anchor="middle">Especificar histórias e</text><text x="123.0" y="337" font-size="11.5" text-anchor="middle">casos de uso</text>
+<line x1="328.0" y1="110" x2="328.0" y2="130" stroke="#555"/>
+<rect x="228" y="130" width="200" height="58" rx="4" fill="#fff4d6" stroke="#6b3a1f" stroke-width="1.3"/><text x="328.0" y="147" font-size="12" font-weight="bold" text-anchor="middle">1.2</text><text x="328.0" y="163" font-size="11.5" text-anchor="middle" font-weight="bold">Infraestrutura e segurança</text>
+<line x1="240" y1="188" x2="240" y2="319.0" stroke="#555"/>
+<line x1="240" y1="247.0" x2="254" y2="247.0" stroke="#555"/>
+<rect x="254" y="218" width="174" height="58" rx="4" fill="#fff" stroke="#6b3a1f" stroke-width="1.3"/><text x="341.0" y="235" font-size="12" font-weight="bold" text-anchor="middle">1.2.1</text><text x="341.0" y="251" font-size="11.5" text-anchor="middle">Configurar banco de dados e</text><text x="341.0" y="265" font-size="11.5" text-anchor="middle">hospedagem</text>
+<line x1="240" y1="319.0" x2="254" y2="319.0" stroke="#555"/>
+<rect x="254" y="290" width="174" height="58" rx="4" fill="#fff" stroke="#6b3a1f" stroke-width="1.3"/><text x="341.0" y="307" font-size="12" font-weight="bold" text-anchor="middle">1.2.2</text><text x="341.0" y="323" font-size="11.5" text-anchor="middle">Implementar autenticação da</text><text x="341.0" y="337" font-size="11.5" text-anchor="middle">equipe</text>
+<line x1="546.0" y1="110" x2="546.0" y2="130" stroke="#555"/>
+<rect x="446" y="130" width="200" height="58" rx="4" fill="#fff4d6" stroke="#6b3a1f" stroke-width="1.3"/><text x="546.0" y="147" font-size="12" font-weight="bold" text-anchor="middle">1.3</text><text x="546.0" y="163" font-size="11.5" text-anchor="middle" font-weight="bold">Operação do salão</text>
+<line x1="458" y1="188" x2="458" y2="391.0" stroke="#555"/>
+<line x1="458" y1="247.0" x2="472" y2="247.0" stroke="#555"/>
+<rect x="472" y="218" width="174" height="58" rx="4" fill="#fff" stroke="#6b3a1f" stroke-width="1.3"/><text x="559.0" y="235" font-size="12" font-weight="bold" text-anchor="middle">1.3.1</text><text x="559.0" y="251" font-size="11.5" text-anchor="middle">Cadastrar o cardápio</text>
+<line x1="458" y1="319.0" x2="472" y2="319.0" stroke="#555"/>
+<rect x="472" y="290" width="174" height="58" rx="4" fill="#fff" stroke="#6b3a1f" stroke-width="1.3"/><text x="559.0" y="307" font-size="12" font-weight="bold" text-anchor="middle">1.3.2</text><text x="559.0" y="323" font-size="11.5" text-anchor="middle">Desenvolver o app do garçom</text>
+<line x1="458" y1="391.0" x2="472" y2="391.0" stroke="#555"/>
+<rect x="472" y="362" width="174" height="58" rx="4" fill="#fff" stroke="#6b3a1f" stroke-width="1.3"/><text x="559.0" y="379" font-size="12" font-weight="bold" text-anchor="middle">1.3.3</text><text x="559.0" y="395" font-size="11.5" text-anchor="middle">Desenvolver o monitor da</text><text x="559.0" y="409" font-size="11.5" text-anchor="middle">cozinha</text>
+<line x1="764.0" y1="110" x2="764.0" y2="130" stroke="#555"/>
+<rect x="664" y="130" width="200" height="58" rx="4" fill="#fff4d6" stroke="#6b3a1f" stroke-width="1.3"/><text x="764.0" y="147" font-size="12" font-weight="bold" text-anchor="middle">1.4</text><text x="764.0" y="163" font-size="11.5" text-anchor="middle" font-weight="bold">Gestão e caixa</text>
+<line x1="676" y1="188" x2="676" y2="391.0" stroke="#555"/>
+<line x1="676" y1="247.0" x2="690" y2="247.0" stroke="#555"/>
+<rect x="690" y="218" width="174" height="58" rx="4" fill="#fff" stroke="#6b3a1f" stroke-width="1.3"/><text x="777.0" y="235" font-size="12" font-weight="bold" text-anchor="middle">1.4.1</text><text x="777.0" y="251" font-size="11.5" text-anchor="middle">Desenvolver caixa e</text><text x="777.0" y="265" font-size="11.5" text-anchor="middle">fechamento de conta</text>
+<line x1="676" y1="319.0" x2="690" y2="319.0" stroke="#555"/>
+<rect x="690" y="290" width="174" height="58" rx="4" fill="#fff" stroke="#6b3a1f" stroke-width="1.3"/><text x="777.0" y="307" font-size="12" font-weight="bold" text-anchor="middle">1.4.2</text><text x="777.0" y="323" font-size="11.5" text-anchor="middle">Desenvolver painel do gestor</text><text x="777.0" y="337" font-size="11.5" text-anchor="middle">e histórico</text>
+<line x1="676" y1="391.0" x2="690" y2="391.0" stroke="#555"/>
+<rect x="690" y="362" width="174" height="58" rx="4" fill="#fff" stroke="#6b3a1f" stroke-width="1.3"/><text x="777.0" y="379" font-size="12" font-weight="bold" text-anchor="middle">1.4.3</text><text x="777.0" y="395" font-size="11.5" text-anchor="middle">Desenvolver estoque e</text><text x="777.0" y="409" font-size="11.5" text-anchor="middle">comissão</text>
+<line x1="982.0" y1="110" x2="982.0" y2="130" stroke="#555"/>
+<rect x="882" y="130" width="200" height="58" rx="4" fill="#fff4d6" stroke="#6b3a1f" stroke-width="1.3"/><text x="982.0" y="147" font-size="12" font-weight="bold" text-anchor="middle">1.5</text><text x="982.0" y="163" font-size="11.5" text-anchor="middle" font-weight="bold">Canais do cliente</text>
+<line x1="894" y1="188" x2="894" y2="391.0" stroke="#555"/>
+<line x1="894" y1="247.0" x2="908" y2="247.0" stroke="#555"/>
+<rect x="908" y="218" width="174" height="58" rx="4" fill="#fff" stroke="#6b3a1f" stroke-width="1.3"/><text x="995.0" y="235" font-size="12" font-weight="bold" text-anchor="middle">1.5.1</text><text x="995.0" y="251" font-size="11.5" text-anchor="middle">Desenvolver pedido pela mesa</text><text x="995.0" y="265" font-size="11.5" text-anchor="middle">(QR code)</text>
+<line x1="894" y1="319.0" x2="908" y2="319.0" stroke="#555"/>
+<rect x="908" y="290" width="174" height="58" rx="4" fill="#fff" stroke="#6b3a1f" stroke-width="1.3"/><text x="995.0" y="307" font-size="12" font-weight="bold" text-anchor="middle">1.5.2</text><text x="995.0" y="323" font-size="11.5" text-anchor="middle">Desenvolver pedido por voz</text><text x="995.0" y="337" font-size="11.5" text-anchor="middle">com IA</text>
+<line x1="894" y1="391.0" x2="908" y2="391.0" stroke="#555"/>
+<rect x="908" y="362" width="174" height="58" rx="4" fill="#fff" stroke="#6b3a1f" stroke-width="1.3"/><text x="995.0" y="379" font-size="12" font-weight="bold" text-anchor="middle">1.5.3</text><text x="995.0" y="395" font-size="11.5" text-anchor="middle">Desenvolver site público</text>
+<line x1="1200.0" y1="110" x2="1200.0" y2="130" stroke="#555"/>
+<rect x="1100" y="130" width="200" height="58" rx="4" fill="#fff4d6" stroke="#6b3a1f" stroke-width="1.3"/><text x="1200.0" y="147" font-size="12" font-weight="bold" text-anchor="middle">1.6</text><text x="1200.0" y="163" font-size="11.5" text-anchor="middle" font-weight="bold">Testes, treinamento e</text><text x="1200.0" y="177" font-size="11.5" text-anchor="middle">implantação</text>
+<line x1="1112" y1="188" x2="1112" y2="391.0" stroke="#555"/>
+<line x1="1112" y1="247.0" x2="1126" y2="247.0" stroke="#555"/>
+<rect x="1126" y="218" width="174" height="58" rx="4" fill="#fff" stroke="#6b3a1f" stroke-width="1.3"/><text x="1213.0" y="235" font-size="12" font-weight="bold" text-anchor="middle">1.6.1</text><text x="1213.0" y="251" font-size="11.5" text-anchor="middle">Testar o sistema na operação</text>
+<line x1="1112" y1="319.0" x2="1126" y2="319.0" stroke="#555"/>
+<rect x="1126" y="290" width="174" height="58" rx="4" fill="#fff" stroke="#6b3a1f" stroke-width="1.3"/><text x="1213.0" y="307" font-size="12" font-weight="bold" text-anchor="middle">1.6.2</text><text x="1213.0" y="323" font-size="11.5" text-anchor="middle">Treinar garçons e cozinha</text>
+<line x1="1112" y1="391.0" x2="1126" y2="391.0" stroke="#555"/>
+<rect x="1126" y="362" width="174" height="58" rx="4" fill="#fff" stroke="#6b3a1f" stroke-width="1.3"/><text x="1213.0" y="379" font-size="12" font-weight="bold" text-anchor="middle">1.6.3</text><text x="1213.0" y="395" font-size="11.5" text-anchor="middle">Implantar em produção</text>
+</svg>
