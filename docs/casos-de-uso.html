@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rancho Aroeira — Casos de Uso (EEL873)</title><style>*{box-sizing:border-box}body{margin:0;background:#f6f1ea;color:#2b211b;font:16px/1.6 'Segoe UI',system-ui,sans-serif}
+main{max-width:920px;margin:0 auto;padding:40px 20px 60px}
+h1{font-size:2.1rem;color:#5a2414;margin:0 0 4px}h2{color:#5a2414;border-bottom:2px solid #d9b98f;padding-bottom:4px;margin-top:2.2em}
+h3{color:#7a3a1c;margin-top:1.6em}a{color:#a3471d}
+blockquote{margin:12px 0;padding:12px 18px;background:#fff;border-left:4px solid #c8743a;border-radius:4px;font-style:italic}
+.tw{overflow-x:auto}table{border-collapse:collapse;width:100%;background:#fff;margin:10px 0 18px;font-size:.95rem}
+th,td{border:1px solid #e3d3bf;padding:8px 10px;text-align:left;vertical-align:top}th{background:#f1e2cf}
+hr{border:0;border-top:1px solid #e3d3bf;margin:28px 0}
+@media (prefers-color-scheme:dark){body{background:#1d1714;color:#eee3d8}h1,h2{color:#f0b886}h3{color:#e7a372}a{color:#f0a36a}
+blockquote,table{background:#29211c}th{background:#3a2c23}th,td,hr{border-color:#4a3a2f}h2{border-color:#6b4e37}}img{max-width:100%;height:auto;background:#fff;border:1px solid #e3d3bf}</style></head>
+<body><main><p><a href="./">← Página do projeto</a></p><h1>Casos de Uso — Sistema de Gestão do Rancho Aroeira</h1>
+<p><strong>EEL873 — Engenharia de Software (UFRJ, 2026/2) · Grupo F</strong></p>
+<h2>1. Diagrama de casos de uso</h2>
+<p><img alt="Diagrama de casos de uso do Sistema de Gestão do Rancho Aroeira" src="diagrama-casos-de-uso.png" /></p>
+<p><em>(Versão vetorial: <a href="diagrama-casos-de-uso.svg">diagrama-casos-de-uso.svg</a>)</em></p>
+<h3>Atores</h3>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Ator</th>
+<th>Tipo</th>
+<th>Papel</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Garçom</td>
+<td>Pessoa</td>
+<td>Lança pedidos, acompanha as mesas e fecha contas</td>
+</tr>
+<tr>
+<td>Proprietário</td>
+<td>Pessoa</td>
+<td>Gestão da casa. <strong>Especializa o Garçom</strong>: faz tudo o que o garçom faz, mais a gestão</td>
+</tr>
+<tr>
+<td>Cozinheiro</td>
+<td>Pessoa</td>
+<td>Prepara os pedidos que chegam ao monitor da cozinha</td>
+</tr>
+<tr>
+<td>Cliente do Salão</td>
+<td>Pessoa</td>
+<td>Pede e acompanha a comanda pelo celular, lendo o QR code da mesa</td>
+</tr>
+<tr>
+<td>Visitante do Site</td>
+<td>Pessoa</td>
+<td>Consulta informações da casa e faz reservas e pedidos de orçamento</td>
+</tr>
+<tr>
+<td>Serviço de IA</td>
+<td>Sistema externo</td>
+<td>Transcreve e interpreta a fala do cliente no pedido por voz</td>
+</tr>
+</tbody>
+</table></div>
+<h3>Casos de uso (26)</h3>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Ator</th>
+<th>Casos de uso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Garçom</td>
+<td>Lançar Pedido da Mesa · Corrigir Comanda · Consultar Situação das Mesas · Fechar Conta · Consultar Comissão</td>
+</tr>
+<tr>
+<td>Proprietário</td>
+<td>Acompanhar Operação ao Vivo · Consultar Indicadores · Exportar Histórico de Vendas · Distribuir Taxa de Serviço · Gerenciar Estoque · Manter Cardápio · Ler Recados · Gerenciar Mesas Conectadas (e, por herança, todos os do Garçom)</td>
+</tr>
+<tr>
+<td>Cozinheiro</td>
+<td>Acompanhar Pedidos da Cozinha · Marcar Pedido como Pronto</td>
+</tr>
+<tr>
+<td>Cliente do Salão</td>
+<td>Entrar na Mesa pelo QR Code · Pedir pela Mesa · Pedir por Voz · Acompanhar Comanda · Enviar Recado Anônimo</td>
+</tr>
+<tr>
+<td>Visitante do Site</td>
+<td>Consultar Horário e Localização · Consultar Cardápio · Solicitar Reserva · Solicitar Orçamento de Evento</td>
+</tr>
+<tr>
+<td>Subfunções</td>
+<td><strong>Montar Item do Cardápio</strong> (tamanho, ponto da carne e acompanhamentos), incluída por <em>Lançar Pedido da Mesa</em> e <em>Pedir pela Mesa</em> · <strong>Autenticar Funcionário</strong>, usada por garçom, proprietário e cozinheiro</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Relações:</strong> <em>Pedir por Voz</em> <strong>estende</strong> <em>Pedir pela Mesa</em> (é inserido quando o cliente escolhe falar ou escrever em vez de tocar no cardápio). <em>Lançar Pedido da Mesa</em> e <em>Pedir pela Mesa</em> <strong>incluem</strong> <em>Montar Item do Cardápio</em>, para que garçom e cliente montem o item com as mesmas regras.</p>
+<p><strong>Escopo e nível:</strong> todos os casos de uso estão no escopo <strong>sistema, caixa-preta</strong> e no nível <strong>objetivo do usuário</strong> (uma pessoa, uma sessão), exceto as duas subfunções.</p>
+<hr />
+<h2>2. Casos de uso descritos (um por integrante)</h2>
+<p>Foram escolhidos os quatro maiores: os dois caminhos de pedido (garçom e cliente), o pedido por voz e o fechamento da conta.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Integrante</th>
+<th>Caso de uso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>João Paulo Garcia</td>
+<td>UC01 — Pedir pela Mesa</td>
+</tr>
+<tr>
+<td>Gabriel dos Santos Percu Saldanha</td>
+<td>UC02 — Lançar Pedido da Mesa</td>
+</tr>
+<tr>
+<td>Henrique Gebara</td>
+<td>UC03 — Fechar Conta</td>
+</tr>
+<tr>
+<td>Danilo Santiago Baptista</td>
+<td>UC04 — Pedir por Voz</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h3>UC01 — Pedir pela Mesa</h3>
+<p><strong>Responsável:</strong> João Paulo Garcia</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Escopo</strong></td>
+<td>Sistema de Gestão do Rancho Aroeira, caixa-preta</td>
+</tr>
+<tr>
+<td><strong>Nível</strong></td>
+<td>Objetivo do usuário</td>
+</tr>
+<tr>
+<td><strong>Ator principal</strong></td>
+<td>Cliente do Salão</td>
+</tr>
+<tr>
+<td><strong>Atores secundários</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>Interessados e interesses</strong></td>
+<td><strong>Cliente:</strong> pedir rápido, sem esperar o garçom, e ver o que pediu. <strong>Proprietário:</strong> que todo pedido entre na comanda da mesa certa e com o preço do cardápio. <strong>Cozinheiro:</strong> receber o pedido completo (ponto e acompanhamentos). <strong>Garçom:</strong> não ser surpreendido por pedido de mesa que ele não atende</td>
+</tr>
+<tr>
+<td><strong>Pré-condições</strong></td>
+<td>O cliente entrou na mesa pelo QR code (<em>Entrar na Mesa pelo QR Code</em>) e a sessão da mesa está aberta</td>
+</tr>
+<tr>
+<td><strong>Gatilho</strong></td>
+<td>O cliente toca em "adicionar" num produto do cardápio</td>
+</tr>
+<tr>
+<td><strong>Pós-condições de sucesso</strong></td>
+<td>O pedido está registrado na comanda da mesa, com preços calculados pelo sistema, e aparece no monitor da cozinha (e no bar, se houver bebidas)</td>
+</tr>
+<tr>
+<td><strong>Garantias em caso de falha</strong></td>
+<td>Nenhum pedido parcial é gravado; o carrinho do cliente é mantido para nova tentativa</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Cenário principal</strong>
+1. O sistema apresenta o cardápio por categorias, com busca por nome.
+2. O cliente escolhe um produto.
+3. O sistema executa <em>Montar Item do Cardápio</em> (tamanho, ponto da carne e acompanhamentos, quando o produto exige).
+4. O sistema adiciona o item ao carrinho e mostra o subtotal.
+5. O cliente repete os passos 2 a 4 até terminar de escolher.
+6. O cliente abre o carrinho e confirma o envio.
+7. O sistema valida a sessão da mesa e cada item contra o cardápio vigente.
+8. O sistema calcula os preços a partir do cardápio, registra o pedido na comanda da mesa e o envia à cozinha e ao bar.
+9. O sistema informa ao cliente que o pedido foi enviado e mostra a comanda atualizada.</p>
+<p><strong>Fluxos alternativos</strong>
+- <strong>5a. O cliente remove ou altera a quantidade de um item do carrinho:</strong> 5a.1. O sistema atualiza o carrinho e o subtotal. 5a.2. Volta ao passo 5.
+- <strong>6a. O carrinho está vazio:</strong> 6a.1. O sistema não permite o envio. 6a.2. Volta ao passo 1.
+- <strong>7a. A sessão da mesa expirou ou foi encerrada pelo caixa:</strong> 7a.1. O sistema informa que é preciso ler o QR code da mesa de novo. 7a.2. O caso de uso termina sem enviar (o carrinho é mantido no aparelho).
+- <strong>7b. Um item deixou de existir ou mudou de regra no cardápio:</strong> 7b.1. O sistema informa qual item precisa ser revisto. 7b.2. Volta ao passo 4.
+- <strong>7c. A mesa enviou um pedido há poucos segundos:</strong> 7c.1. O sistema pede para aguardar alguns segundos (evita envio duplicado por toque duplo). 7c.2. Volta ao passo 6.
+- <strong>8a. Falha de comunicação com o servidor:</strong> 8a.1. O sistema informa que o pedido não foi enviado e mantém o carrinho. 8a.2. Volta ao passo 6.</p>
+<p><strong>Requisitos especiais</strong>
+- O cliente <strong>nunca envia preço</strong>: só envia produto, opção, ponto, acompanhamentos e quantidade; o preço é sempre calculado no servidor.
+- Carnes principais exigem ponto; acompanhamentos limitados à lista de cada categoria; quantidade de 1 a 20 por item.
+- Funciona no navegador do celular, sem instalar aplicativo; campos com fonte de pelo menos 16px (evita zoom automático no iPhone).</p>
+<p><strong>Variações tecnológicas e de dados:</strong> o passo 2 pode ser feito por toque (este caso de uso) ou por voz (<em>Pedir por Voz</em>, que estende este).
+<strong>Frequência:</strong> dezenas de vezes por dia de funcionamento, concentradas no pico do almoço.
+<strong>Questões em aberto:</strong> o garçom deve ser avisado quando a sua mesa faz um pedido pelo celular?</p>
+<hr />
+<h3>UC02 — Lançar Pedido da Mesa</h3>
+<p><strong>Responsável:</strong> Gabriel dos Santos Percu Saldanha</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Escopo</strong></td>
+<td>Sistema de Gestão do Rancho Aroeira, caixa-preta</td>
+</tr>
+<tr>
+<td><strong>Nível</strong></td>
+<td>Objetivo do usuário</td>
+</tr>
+<tr>
+<td><strong>Ator principal</strong></td>
+<td>Garçom (ou Proprietário, por herança)</td>
+</tr>
+<tr>
+<td><strong>Atores secundários</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>Interessados e interesses</strong></td>
+<td><strong>Garçom:</strong> lançar rápido, sem voltar à cozinha. <strong>Cozinheiro:</strong> pedido legível, com ponto e acompanhamentos. <strong>Cliente:</strong> receber exatamente o que pediu. <strong>Proprietário:</strong> nada consumido fora da comanda</td>
+</tr>
+<tr>
+<td><strong>Pré-condições</strong></td>
+<td>O garçom está autenticado (<em>Autenticar Funcionário</em>)</td>
+</tr>
+<tr>
+<td><strong>Gatilho</strong></td>
+<td>O cliente faz o pedido ao garçom na mesa</td>
+</tr>
+<tr>
+<td><strong>Pós-condições de sucesso</strong></td>
+<td>O pedido está na comanda da mesa e no monitor da cozinha e do bar; a mesa aparece como ocupada</td>
+</tr>
+<tr>
+<td><strong>Garantias em caso de falha</strong></td>
+<td>O carrinho do garçom é mantido no aparelho até ser enviado</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Cenário principal</strong>
+1. O garçom escolhe a mesa na tela das 15 mesas.
+2. O sistema mostra o cardápio da mesa, a comanda já existente e o subtotal.
+3. O garçom busca o produto por nome ou categoria.
+4. O sistema executa <em>Montar Item do Cardápio</em>.
+5. O sistema adiciona o item ao carrinho da mesa.
+6. O garçom repete os passos 3 a 5 até terminar.
+7. O garçom confirma o envio.
+8. O sistema registra o pedido na comanda da mesa com status "pendente" e o envia à cozinha e ao bar, separando os itens por setor.
+9. O sistema limpa o carrinho, atualiza a comanda e marca a mesa como ocupada.</p>
+<p><strong>Fluxos alternativos</strong>
+- <strong>3a. O produto não está no cardápio (pedido especial):</strong> 3a.1. O garçom escolhe "item avulso" e informa nome, preço e setor (cozinha ou bar). 3a.2. O sistema adiciona o item, marcado como avulso. 3a.3. Volta ao passo 6.
+- <strong>5a. Item igual (mesmo produto, ponto e acompanhamentos) já está no carrinho:</strong> 5a.1. O sistema soma a quantidade na mesma linha. 5a.2. Volta ao passo 6.
+- <strong>6a. O garçom troca de mesa antes de enviar:</strong> 6a.1. O sistema guarda o carrinho da mesa anterior. 6a.2. Volta ao passo 1.
+- <strong>7a. O carrinho está vazio:</strong> 7a.1. O sistema não permite o envio. 7a.2. Volta ao passo 3.
+- <strong>8a. Falha de comunicação:</strong> 8a.1. O sistema avisa e mantém o carrinho. 8a.2. Volta ao passo 7.
+- <strong>8b. A sessão do garçom expirou:</strong> 8b.1. O sistema pede novo login (<em>Autenticar Funcionário</em>), mantendo o carrinho. 8b.2. Volta ao passo 7.</p>
+<p><strong>Requisitos especiais</strong>
+- O pedido deve aparecer no monitor da cozinha em poucos segundos, sem recarregar a página.
+- Usável com uma mão, em pé, no salão; botões grandes; carrinho preservado se o celular bloquear a tela.</p>
+<p><strong>Variações tecnológicas e de dados:</strong> número de mesas configurável (hoje 15).
+<strong>Frequência:</strong> é o caso de uso mais executado do sistema — várias vezes por mesa a cada almoço.
+<strong>Questões em aberto:</strong> limite de valor para item avulso sem aprovação do proprietário?</p>
+<hr />
+<h3>UC03 — Fechar Conta</h3>
+<p><strong>Responsável:</strong> Henrique Gebara</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Escopo</strong></td>
+<td>Sistema de Gestão do Rancho Aroeira, caixa-preta</td>
+</tr>
+<tr>
+<td><strong>Nível</strong></td>
+<td>Objetivo do usuário</td>
+</tr>
+<tr>
+<td><strong>Ator principal</strong></td>
+<td>Garçom (ou Proprietário, no caixa)</td>
+</tr>
+<tr>
+<td><strong>Atores secundários</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>Interessados e interesses</strong></td>
+<td><strong>Cliente:</strong> pagar o valor certo, com a taxa de serviço opcional. <strong>Proprietário:</strong> toda venda registrada, com forma de pagamento, para o caixa e os relatórios. <strong>Garçons:</strong> a taxa de serviço paga registrada corretamente para a divisão da comissão. <strong>Fisco:</strong> venda registrada com valor coerente</td>
+</tr>
+<tr>
+<td><strong>Pré-condições</strong></td>
+<td>Funcionário autenticado; a mesa tem comanda com pelo menos um item</td>
+</tr>
+<tr>
+<td><strong>Gatilho</strong></td>
+<td>O cliente pede a conta</td>
+</tr>
+<tr>
+<td><strong>Pós-condições de sucesso</strong></td>
+<td>A venda está no histórico com itens, subtotal, indicação de taxa paga, forma de pagamento e tempo médio de preparo; os pedidos da mesa estão finalizados; a sessão de QR da mesa está encerrada; o estoque dos itens vendidos foi baixado; a mesa está livre</td>
+</tr>
+<tr>
+<td><strong>Garantias em caso de falha</strong></td>
+<td>A comanda permanece aberta, sem venda duplicada no histórico</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Cenário principal</strong>
+1. O funcionário escolhe a mesa e a opção "fechar conta".
+2. O sistema mostra todos os itens da comanda, o subtotal, a taxa de serviço de 10% e o total.
+3. O funcionário pergunta ao cliente e confirma se a taxa de serviço será paga.
+4. O sistema recalcula o total.
+5. O funcionário informa a forma de pagamento (Pix, cartão de crédito, cartão de débito ou dinheiro).
+6. O funcionário confirma o fechamento.
+7. O sistema registra a venda no histórico, com o valor sem a taxa e a indicação de que a taxa foi paga.
+8. O sistema marca os pedidos da mesa como finalizados e encerra a sessão de QR code da mesa.
+9. O sistema baixa do estoque os insumos dos itens vendidos.
+10. O sistema mostra o cupom para impressão e a mesa volta a ficar livre.</p>
+<p><strong>Fluxos alternativos</strong>
+- <strong>2a. Ainda há itens pendentes na cozinha:</strong> 2a.1. O sistema avisa quais itens não foram entregues. 2a.2. O funcionário escolhe continuar (2a.3. volta ao passo 3) ou cancelar o fechamento (2a.4. o caso de uso termina).
+- <strong>3a. O cliente não paga a taxa de serviço:</strong> 3a.1. O funcionário desmarca a taxa. 3a.2. Volta ao passo 4.
+- <strong>5a. Pagamento em dinheiro com troco:</strong> 5a.1. O funcionário informa o valor recebido. 5a.2. O sistema mostra o troco. 5a.3. Volta ao passo 6.
+- <strong>5b. A mesa divide a conta em mais de uma forma de pagamento:</strong> 5b.1. O funcionário registra a forma principal e anota a divisão no campo de observação. 5b.2. Volta ao passo 6.
+- <strong>6a. O cliente contesta um item:</strong> 6a.1. O funcionário executa <em>Corrigir Comanda</em>. 6a.2. Volta ao passo 2.
+- <strong>7a. Falha ao gravar a venda:</strong> 7a.1. O sistema avisa e não altera a comanda. 7a.2. Volta ao passo 6.
+- <strong>9a. Insumo sem cadastro no estoque:</strong> 9a.1. O sistema registra a venda normalmente e marca o item para revisão no estoque. 9a.2. Segue no passo 10.</p>
+<p><strong>Requisitos especiais</strong>
+- A venda é gravada com o <strong>valor sem a taxa</strong> e a indicação de taxa paga; relatórios e indicadores somam a taxa quando paga. Esse padrão deve ser o <strong>mesmo</strong> no fechamento pelo garçom e pelo caixa, para não contar a taxa duas vezes.
+- O fechamento não pode ser feito duas vezes para a mesma comanda.</p>
+<p><strong>Variações tecnológicas e de dados:</strong> cupom em formato de impressora térmica.
+<strong>Frequência:</strong> uma vez por mesa atendida.
+<strong>Questões em aberto:</strong> integrar a emissão de nota fiscal eletrônica em versão futura?</p>
+<hr />
+<h3>UC04 — Pedir por Voz</h3>
+<p><strong>Responsável:</strong> Danilo Santiago Baptista</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Escopo</strong></td>
+<td>Sistema de Gestão do Rancho Aroeira, caixa-preta</td>
+</tr>
+<tr>
+<td><strong>Nível</strong></td>
+<td>Objetivo do usuário (estende <em>Pedir pela Mesa</em>)</td>
+</tr>
+<tr>
+<td><strong>Ator principal</strong></td>
+<td>Cliente do Salão</td>
+</tr>
+<tr>
+<td><strong>Atores secundários</strong></td>
+<td>Serviço de IA (transcrição e interpretação da fala)</td>
+</tr>
+<tr>
+<td><strong>Interessados e interesses</strong></td>
+<td><strong>Cliente:</strong> pedir falando, como falaria ao garçom. <strong>Proprietário:</strong> que a IA não invente item nem preço e que o custo de uso seja controlado. <strong>Cozinheiro:</strong> receber o pedido com ponto e acompanhamentos. <strong>ANPD:</strong> áudio do cliente usado só para o pedido</td>
+</tr>
+<tr>
+<td><strong>Ponto de extensão</strong></td>
+<td>Passo 2 de <em>Pedir pela Mesa</em> (escolha do produto)</td>
+</tr>
+<tr>
+<td><strong>Pré-condições</strong></td>
+<td>Sessão da mesa aberta; o celular permite o uso do microfone (ou o cliente escolhe escrever)</td>
+</tr>
+<tr>
+<td><strong>Gatilho</strong></td>
+<td>O cliente toca no botão de falar</td>
+</tr>
+<tr>
+<td><strong>Pós-condições de sucesso</strong></td>
+<td>Os itens entendidos estão no carrinho da mesa, com tamanho, ponto e acompanhamentos, aguardando a confirmação do cliente (o envio segue em <em>Pedir pela Mesa</em>)</td>
+</tr>
+<tr>
+<td><strong>Garantias em caso de falha</strong></td>
+<td>Nenhum item é adicionado sem o cliente ver e confirmar; nada é enviado à cozinha por este caso de uso</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Cenário principal</strong>
+1. O cliente segura o botão e fala o pedido (ex.: "uma picanha para dois, ao ponto, com farofa e duas cocas").
+2. O cliente solta o botão.
+3. O sistema envia o áudio ao Serviço de IA.
+4. O Serviço de IA transcreve a fala.
+5. O sistema envia o texto e o cardápio vigente ao Serviço de IA.
+6. O Serviço de IA devolve os itens interpretados.
+7. O sistema valida cada item contra o cardápio (produto existente, tamanho, ponto, acompanhamentos permitidos) e monta os itens com os preços do cardápio.
+8. O sistema responde em texto o que entendeu e mostra os itens para confirmação.
+9. O cliente confirma.
+10. O sistema adiciona os itens ao carrinho; o caso de uso retorna a <em>Pedir pela Mesa</em> no passo 4.</p>
+<p><strong>Fluxos alternativos</strong>
+- <strong>1a. O cliente prefere escrever:</strong> 1a.1. O cliente digita o pedido. 1a.2. Segue no passo 5.
+- <strong>2a. O cliente arrasta para cima para travar a gravação:</strong> 2a.1. O sistema continua gravando sem precisar segurar. 2a.2. O cliente toca em enviar ou descartar. 2a.3. Se enviar, segue no passo 3; se descartar, o caso de uso termina.
+- <strong>3a. O áudio está em silêncio ou curto demais:</strong> 3a.1. O sistema avisa que não ouviu nada. 3a.2. Volta ao passo 1.
+- <strong>3b. A mesa atingiu o limite de falas da sessão:</strong> 3b.1. O sistema sugere usar o cardápio ou chamar o garçom. 3b.2. O caso de uso termina.
+- <strong>6a. O pedido é ambíguo (ex.: "uma picanha" — há a normal, a premium e a do prato executivo):</strong> 6a.1. O sistema pergunta ao cliente qual delas, com as opções e os preços do cardápio. 6a.2. O cliente responde falando ou escrevendo. 6a.3. Volta ao passo 5, com o histórico da conversa.
+- <strong>6b. Faltam informações obrigatórias (ex.: o ponto da carne):</strong> 6b.1. O sistema anota o que entendeu e pergunta o que falta. 6b.2. Volta ao passo 1.
+- <strong>6c. O cliente fez uma pergunta sobre o cardápio:</strong> 6c.1. O sistema responde com base no cardápio. 6c.2. Volta ao passo 1.
+- <strong>6d. O Serviço de IA não responde:</strong> 6d.1. O sistema tenta outro modelo de IA. 6d.2. Se nenhum responder, avisa e sugere o cardápio por toque; o caso de uso termina.
+- <strong>7a. A IA devolveu item que não existe no cardápio:</strong> 7a.1. O sistema descarta o item e informa o cliente. 7a.2. Segue no passo 8 com os itens válidos.
+- <strong>9a. O cliente corrige algo:</strong> 9a.1. O cliente fala a correção. 9a.2. Volta ao passo 3.</p>
+<p><strong>Requisitos especiais</strong>
+- A IA <strong>nunca define preço nem envia pedido</strong>: preços vêm do cardápio e o envio exige a confirmação do cliente.
+- Ambiguidades decididas por regra do sistema (a IA só redige a pergunta), para não esconder opções do cliente.
+- Limite de falas por sessão e intervalo mínimo entre falas, para controlar custo e abuso.
+- Priorizar serviço de IA com plano gratuito; o pago só como reserva.
+- O áudio é usado só para transcrever o pedido; a fala transcrita fica guardada por prazo limitado para melhorar o sistema.</p>
+<p><strong>Variações tecnológicas e de dados:</strong> gravação por <em>MediaRecorder</em> no navegador (áudio em webm no Android e mp4 no iPhone); entrada por texto como alternativa.
+<strong>Frequência:</strong> parte dos pedidos feitos pela mesa; tende a crescer entre clientes com pouca familiaridade com o cardápio digital.
+<strong>Questões em aberto:</strong> qual o limite ideal de falas por mesa? A IA deve sugerir acompanhamentos ou só registrar o que o cliente pediu?</p></main></body></html>
